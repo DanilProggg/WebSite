@@ -2,8 +2,12 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/selcet2_override.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
 	<?php include("db.php") ?>
@@ -15,7 +19,9 @@
 			Something...
 		</div>
 	</header>
+	<div class="error_window">Ошибка в заполнении формы<br>(Проверте выбранали ли группа и дата, приавльно ли заполнена форма)</div>
 	<main>
+
 		<div class="menu">
 			<a class="menu-navbutton">Расписание</a>
 			<a class="menu-navbutton">Расписание</a>
@@ -29,7 +35,7 @@
 					</script> 
 				</div>
 				<div class="canvas-up_menu-group">
-					<select id="group">
+					<select id="group"><option value="0" selected disabled>Выберите группу</option>
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM группы");
 							while ($row = mysqli_fetch_array($result)){
@@ -39,12 +45,11 @@
 					</select>
 				</div>
 			</div>
-			<div class="canvas-table">
-				<table id="table_list">
+				<table class="canvas-table" id="table_list">
 					<tr id="table_list-names"><td>№</td><td>Дисциплина</td><td>Преподаватель</td><td>Аудитория</td></tr>
 
 					<tr id="table_list-1"><td>1</td>
-						<td><select>
+						<td><select id="lesson-1" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -52,7 +57,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-1" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -60,7 +65,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-1" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -70,7 +75,7 @@
 						</select></td>
 					</tr>
 					<tr id="table_list-2"><td>2</td>
-						<td><select>
+						<td><select id="lesson-2" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -78,7 +83,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-2" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -86,7 +91,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -96,7 +101,7 @@
 						</select></td>
 					</tr>
 					<tr id="table_list-3"><td>3</td>
-						<td><select>
+						<td><select id="lesson-3" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -104,7 +109,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-3" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -112,7 +117,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-3" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -122,7 +127,7 @@
 						</select></td>
 					</tr>
 					<tr id="table_list-4"><td>4</td>
-						<td><select>
+						<td><select id="lesson-4" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -130,7 +135,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-4" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -138,7 +143,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-4" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -148,7 +153,7 @@
 						</select></td>
 					</tr>
 					<tr id="table_list-5"><td>5</td>
-						<td><select>
+						<td><select id="lesson-5" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -156,7 +161,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-5" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -164,7 +169,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-5" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -174,7 +179,7 @@
 						</select></td>
 					</tr>
 					<tr id="table_list-6"><td>6</td>
-						<td><select>
+						<td><select id="lesson-6" class="lesson"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM дисциплины");
 								while ($row = mysqli_fetch_array($result)){
@@ -182,7 +187,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="teacher-6" class="teacher"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM преподаватели");
 								while ($row = mysqli_fetch_array($result)){
@@ -190,7 +195,7 @@
 								}
 							?>
 						</select></td>
-						<td><select>
+						<td><select id="cabinet-6" class="cabinet"><option value="0">-----------</option>
 							<?php 
 								$result = mysqli_query($db, "SELECT * FROM аудитории");
 								while ($row = mysqli_fetch_array($result)){
@@ -200,6 +205,9 @@
 						</select></td>
 					</tr>
 				</table>
+			<div class="canvas-under_menu">
+				<button class="canvas-under_menu-button save">Сахранить</button>
+				
 			</div>
 		</div>
 		<div class="right_menu">
