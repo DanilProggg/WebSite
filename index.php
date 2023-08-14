@@ -3,6 +3,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/selcet2_override.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,8 +24,9 @@
 	<main>
 
 		<div class="menu">
-			<a class="menu-navbutton">Расписание</a>
-			<a class="menu-navbutton">Расписание</a>
+			<a href="/" class="menu-navbutton">Расписание</a>
+			<a href="/lessons.php" class="menu-navbutton">Дисциплины</a>
+			<a href="/teachers.php" class="menu-navbutton">Преподаватели</a>
 		</div>
 		<div class="canvas">
 			<div class="canvas-up_menu">
