@@ -27,6 +27,7 @@
 			<a href="/" class="menu-navbutton">Расписание</a>
 			<a href="/lessons.php" class="menu-navbutton">Дисциплины</a>
 			<a href="/teachers.php" class="menu-navbutton">Преподаватели</a>
+			<a href="cabinets.php" class="menu-navbutton">Аудитории</a>
 		</div>
 		<div class="canvas">
 			<div class="canvas-up_menu">

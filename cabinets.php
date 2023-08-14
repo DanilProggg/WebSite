@@ -14,7 +14,7 @@
 	<?php include("db.php") ?>
 	<header>
 		<div class="header-logo">
-			ПРЕПОДАВАТЕЛИ
+			АУДИТОРИИ
 		</div>
 		<div class="header-text">
 			Something...
@@ -38,22 +38,20 @@
 			</div>
 			<div class="canvas-block">
 				<div class="canvas-block-units">
-					<h2>Преподаватели</h2>
+					<h2>Аудитория</h2>
 					<table class="canvas-block-units-table">
 						<?php 
-							$result = mysqli_query($db, "SELECT * FROM преподаватели");
+							$result = mysqli_query($db, "SELECT * FROM аудитории");
 							while ($row = mysqli_fetch_array($result)){
-								echo "<tr id='teacher-".$row['id_преподавателя']."'><td>" ."<div class='canvas-block-units-unit'>".$row['фамилия']." ".$row['имя']." ".$row['отчество']."</div>". "</td><td><img id='".$row['id_преподавателя']."' alt='Удалить' class='canvas-block-units-img del_teacher' src='img/del.png'></td></tr>";
+								echo "<tr id='cabinet-".$row['id_аудитории']."'><td>" ."<div class='canvas-block-units-unit'>".$row['номер']."</div>". "</td><td><img id='".$row['id_аудитории']."' alt='Удалить' class='canvas-block-units-img del_cabinet' src='img/del.png'></td></tr>";
 							}
 						?>
 					</table>
 				</div>
 				<div class="canvas-block-form">
-					<h2>Добавить преподавателя</h2>
-					<input class="canvas-block-form-input surname" placeholder="Фамилия">
-					<input class="canvas-block-form-input name" placeholder="Имя">
-					<input class="canvas-block-form-input patronymic" placeholder="Отчество">
-					<button id="add_teacher" class="canvas-block-form-button">Сахранить</button>
+					<h2>Добавить аудиторию</h2>
+					<input class="canvas-block-form-input number" placeholder="Номер аудитории">
+					<button id="add_cabinet" class="canvas-block-form-button ">Сахранить</button>
 				</div>
 			</div>
 		</div>

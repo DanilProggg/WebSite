@@ -5,6 +5,7 @@ import 'select2/dist/css/select2.css';
 import {saveData,updateData} from './modules/main.js';
 import {delete_lesson,add_lesson} from './modules/lessons.js';
 import {delete_teacher,add_teacher} from './modules/teachers.js';
+import {delete_cabinet,add_cabinet} from './modules/cabinets.js';
 
 
 $(document).ready(function() {
@@ -50,7 +51,18 @@ $(document).ready(function() {
 	$('#add_teacher').on('click',function(){
 		$("#add_teacher").prop("disabled",true);
 		add_teacher();
+	});
 
+
+
+	$('.del_cabinet').on('click',function() {
+	    var clickId = $(this).attr('id');
+	    delete_cabinet(clickId);
+	});
+
+	$('#add_cabinet').on('click',function(){
+		$("#add_cabinet").prop("disabled",true);
+		add_cabinet();
 	});
 
 

@@ -18,6 +18,9 @@ main{
 	display: flex;
 	min-height: calc(100% - 60px - 20px);
 }
+a{
+	text-decoration: none;
+}
 
 
 
@@ -49,6 +52,8 @@ main{
 
 }
 .menu-navbutton{
+	color: black;
+
 	margin-bottom: 10px;
 	font-size: 18px;
 	justify-content: center;
@@ -58,6 +63,9 @@ main{
 	height: 25px;
 	background: #fff;
 	border-radius: 5px;
+}
+.menu-navbutton:hover{
+	transform: scale(1.1);
 }
 
 
