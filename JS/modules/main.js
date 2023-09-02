@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import jQuery from 'jquery';
 export function saveData() {
+	saveForm();
 	const saveData = {
 		date: $('#date').val(),
 		group: $('#group').val(),
@@ -122,4 +123,8 @@ export function updateData() {
 export function errorForm(){
 	$('.error_window').css('opacity','1');
 	setTimeout(() => { $('.error_window').css('opacity','0');}, 2000);
+};
+function saveForm(){
+	$('.save_window').css('opacity','1');
+	setTimeout(() => { $('.save_window').css('opacity','0');}, 2000);
 };

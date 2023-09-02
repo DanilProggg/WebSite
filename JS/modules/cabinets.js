@@ -1,6 +1,6 @@
 import $ from 'jquery';
 export function delete_cabinet(id) {
-	$(`cabinet-${id}`).remove();
+	$(`#cabinet-${id}`).remove();
 	let data_to_delete = {
 		action:'DELETE',
 		object:`${id}`

@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<link rel="stylesheet" type="text/css" href="styles/selcet2_override.css">
+	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">
 	<link rel="stylesheet" type="text/css" href="styles/crud.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

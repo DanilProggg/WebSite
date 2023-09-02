@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
-	<link rel="stylesheet" type="text/css" href="styles/selcet2_override.css">
+	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
 		</div>
 	</header>
 	<div class="error_window">Ошибка в заполнении формы<br>(Проверте выбранали ли группа и дата, приавльно ли заполнена форма)</div>
+	<div class="save_window">Расписание сахранено</div>
 	<main>
 
 		<div class="menu">
@@ -209,7 +210,7 @@
 					</tr>
 				</table>
 			<div class="canvas-under_menu">
-				<button class="canvas-under_menu-button save">Сахранить</button>
+				<button class="canvas-under_menu-button save" disabled="disabled">Сахранить</button>
 				
 			</div>
 		</div>

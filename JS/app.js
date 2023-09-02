@@ -31,13 +31,18 @@ $(document).ready(function() {
 		width:150
 	});
 
-
+	
 
 	$('.save').click(function(){
 	saveData();
 	});
 
 	$('#date, #group').on('change', function() {
+		if($('#date').val() != null && $('#group').val() != null){
+			$('.save').prop("disabled",false);
+		}
+		console.log($('#date').val());
+		console.log($('#group').val());
 		updateData();
 	});
 
