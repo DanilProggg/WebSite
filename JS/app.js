@@ -9,6 +9,17 @@ import {delete_cabinet,add_cabinet} from './modules/cabinets.js';
 
 
 $(document).ready(function() {
+
+
+	$.ajax({  //Ajax запрос - запрашивает все дисиплины для дальнейшего их использования
+		url: 'php_querys/db_cleaner.php',
+		method: 'get',
+		success: function () {
+		console.log("Data have been cleaned");
+		}
+	});
+
+
 	$("#group").select2();
 	$(".lesson").select2({
 		width:300
