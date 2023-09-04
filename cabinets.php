@@ -51,7 +51,7 @@
 				<div class="canvas-block-form">
 					<h2>Добавить аудиторию</h2>
 					<input class="canvas-block-form-input number" placeholder="Номер аудитории">
-					<button id="add_cabinet" class="canvas-block-form-button ">Сахранить</button>
+					<button id="add_cabinet" class="canvas-block-form-button ">Сохранить</button>
 				</div>
 			</div>
 		</div>

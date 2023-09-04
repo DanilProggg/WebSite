@@ -53,7 +53,7 @@
 					<input class="canvas-block-form-input surname" placeholder="Фамилия">
 					<input class="canvas-block-form-input name" placeholder="Имя">
 					<input class="canvas-block-form-input patronymic" placeholder="Отчество">
-					<button id="add_teacher" class="canvas-block-form-button">Сахранить</button>
+					<button id="add_teacher" class="canvas-block-form-button">Сохранить</button>
 				</div>
 			</div>
 		</div>

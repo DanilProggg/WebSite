@@ -24,10 +24,13 @@
 
 }
 .canvas-block-units-unit{
+
 	padding-left: 10px;
 	height: var(--table-height);
 }
 .canvas-block-units-img{
+	padding-right: 10px;
+	float: right;
 	height: var(--table-height);
 }
 .canvas-block-units-img:hover{

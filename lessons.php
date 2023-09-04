@@ -51,7 +51,7 @@
 				<div class="canvas-block-form">
 					<h2>Добавить дисциплину</h2>
 					<input class="canvas-block-form-input" placeholder="Назавние дисциплины">
-					<button id="add_lesson" class="canvas-block-form-button">Сахранить</button>
+					<button id="add_lesson" class="canvas-block-form-button">Сохранить</button>
 				</div>
 			</div>
 		</div>
