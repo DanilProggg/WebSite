@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import jQuery from 'jquery';
 export function saveData() {
-	saveForm();
+	
 	const saveData = {
 		date: $('#date').val(),
 		group: $('#group').val(),
@@ -65,6 +65,7 @@ export function saveData() {
 				console.log('Data loaded');
 			}
 		});
+		saveForm();
 	} else {
 			errorForm();
 	}

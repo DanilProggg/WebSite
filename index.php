@@ -210,7 +210,7 @@
 					</tr>
 				</table>
 			<div class="canvas-under_menu">
-				<button class="canvas-under_menu-button save" disabled="disabled">Сахранить</button>
+				<button class="canvas-under_menu-button save" disabled="disabled">Сохранить</button>
 				
 			</div>
 		</div>

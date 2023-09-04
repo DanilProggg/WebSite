@@ -1,7 +1,7 @@
 <?php 
 ob_end_clean();
 header('Content-Type: application/json');
-include_once ("db.php");
+include_once ("../db.php");
 
 
 $date = $_GET['date'];
