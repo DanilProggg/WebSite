@@ -1,3 +1,6 @@
+<?php 
+	include_once("check_auth.php");
+?>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -7,27 +10,22 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+	<title>Дисциплины</title>
 
 </head>
 <body>
 	<?php include("db.php") ?>
 	<header>
 		<div class="header-logo">
-			ДИСЦИПЛИНЫ
+			РАСПИСАНИЕ
 		</div>
-		<div class="header-text">
-			Something...
-		</div>
+		<?php include("components/header.html") ?>
 	</header>
 	<main>
 
-		<div class="menu">
-			<a href="/" class="menu-navbutton">Расписание</a>
-			<a href="lessons.php" class="menu-navbutton">Дисциплины</a>
-			<a href="/teachers.php" class="menu-navbutton">Преподаватели</a>
-			<a href="cabinets.php" class="menu-navbutton">Аудитории</a>
-		</div>
+		<nav class="menu">
+			<?php include("components/nav.html")?>
+		</nav>
 		<div class="canvas">
 			<div class="pop_up">
 				<div class="pop_up-dialog">
@@ -60,6 +58,6 @@
 	</main>
 
 
-	<script type="text/javascript" src="JS/dist/bundle.js"></script>
+	<script type="text/javascript" src="js/dist/bundle.js"></script>
 </body>
 </html>

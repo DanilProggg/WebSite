@@ -115,7 +115,7 @@
 }
 .save{
 	width: 120px;
-	border-color: #0091ff;
+	border-color: var(--main-color);
 }
 
 .canvas-under_menu-button:hover{

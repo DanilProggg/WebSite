@@ -1,5 +1,18 @@
 import $ from 'jquery';
-export function delete_lesson(id) {
+export function lesson() {
+	$('.del_lesson').on('click',function() {
+	    var clickId = $(this).attr('id');
+	    delete_lesson(clickId);
+	});
+
+	$('#add_lesson').on('click',function(){
+		$("#add_lesson").prop("disabled",true);
+		add_lesson();
+
+	});
+}
+
+function delete_lesson(id) {
 	$(`#lesson-${id}`).remove();
 	let data_to_delete = {
 		action:'DELETE',
@@ -18,7 +31,7 @@ export function delete_lesson(id) {
 }
 
 
-export function add_lesson() {
+function add_lesson() {
 	let data_to_add = {
 	action:'ADD',
 	object: $('.canvas-block-form-input').val()

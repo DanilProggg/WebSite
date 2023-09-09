@@ -2,16 +2,17 @@
   "name": "js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "webpack --mode developer",
     "build": "webpack --mode production"
   },
-
-  "author": "",
+  "author": "Danil Krivobok",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.7.0"
+    "jquery": "^3.7.0",
+    "jquery.cookie": "^1.4.1",
+    "select2": "^4.1.0-rc.0"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",

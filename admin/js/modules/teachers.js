@@ -1,12 +1,25 @@
 import $ from 'jquery';
-export function delete_cabinet(id) {
-	$(`#cabinet-${id}`).remove();
+
+export function teacher(){
+	$('.del_teacher').on('click',function() {
+	    var clickId = $(this).attr('id');
+	    delete_teacher(clickId);
+	});
+
+	$('#add_teacher').on('click',function(){
+		$("#add_teacher").prop("disabled",true);
+		add_teacher();
+	});
+}
+
+function delete_teacher(id) {
+	$(`#teacher-${id}`).remove();
 	let data_to_delete = {
 		action:'DELETE',
-		object:`${id}`
+		id:`${id}`
 	}
 	$.ajax({
-			url: 'php_querys/cabinets_query.php',
+			url: 'php_querys/teachers_query.php',
 			method: 'post',
 			dataType: 'json',
 			contentType: 'application/json',
@@ -17,15 +30,17 @@ export function delete_cabinet(id) {
 		});
 }
 
-export function add_cabinet() {
+function add_teacher() {
 	let data_to_add = {
 		action:'ADD',
-		object: $('.canvas-block-form-input').val()
+		surname :$('.surname').val(),
+		name :$('.name').val(),
+		patronymic : $('.patronymic').val()
 	}	
 
 		//создавать элемент при создании в таблице
 	$.ajax({
-			url: 'php_querys/cabinets_query.php',
+			url: 'php_querys/teachers_query.php',
 			method: 'post',
 			dataType: 'json',
 			contentType: 'application/json',

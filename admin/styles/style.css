@@ -1,8 +1,11 @@
+:root{
+	--main-color:#009fdf;
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 
 
-	background: #0091ff;
+	background: var(--main-color);
 	height: 100%;
 	margin: 0;
 }
@@ -31,12 +34,28 @@ a{
 	min-width: 250px;
 	font-weight: 600;
 }
-.header-text{
+.header__container{
 	display: flex;
-	justify-content: center;
+	justify-content: end;
 	align-items: center;
 	flex-shrink: 1;
 	flex-grow: 1;
+}
+
+.header__container-exit{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+
+	margin-right: 10px;
+	width: 100px;
+	height: 100%;
+}
+
+.header__container-exit:hover{
+	background: #DCDCDC;
+	cursor: pointer;
 }
 
 

@@ -3,10 +3,10 @@ module.exports = {
 	watch:true,
 	devtool:'source-map',
 	entry:{
-		filename:'./index.js',
+		filename:'./app.js',
 	},
 	output:{
-		filename:'public.js',
+		filename:'bundle.js',
 	},
 	module:{
 		rules: [

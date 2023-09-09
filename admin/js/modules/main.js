@@ -1,6 +1,40 @@
 import $ from 'jquery';
 import jQuery from 'jquery';
-export function saveData() {
+
+
+export function select2_main(){
+	$("#group").select2();
+	$(".lesson").select2({
+		width:300
+	});
+	$('.teacher').select2({
+		width:450
+	});
+	$('.cabinet').select2({
+		width:150
+	});
+
+}
+
+export function save(){
+	$('.save').click(function(){
+	saveData();
+	});
+}
+
+export function update(){
+	$('#date, #group').on('change', function() {
+		if($('#date').val() != null && $('#group').val() != null){
+			$('.save').prop("disabled",false);
+		}
+		console.log($('#date').val());
+		console.log($('#group').val());
+		updateData();
+	});
+}
+
+
+function saveData() {
 	
 	const saveData = {
 		date: $('#date').val(),
@@ -71,7 +105,7 @@ export function saveData() {
 	}
 }
 
-export function updateData() {
+function updateData() {
 	let params = jQuery.param({
 		date: $('#date').val(),
 		group: $('#group').val(),
