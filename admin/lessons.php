@@ -27,13 +27,6 @@
 			<?php include("components/nav.html")?>
 		</nav>
 		<div class="canvas">
-			<div class="pop_up">
-				<div class="pop_up-dialog">
-					<label class="pop_up-dialog-text"></label>
-					<button>Удалить</button>
-					<button>Отмена</button>
-				</div>
-			</div>
 			<div class="canvas-block">
 				<div class="canvas-block-units">
 					<h2>Дисциплины</h2>

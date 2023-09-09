@@ -64,4 +64,8 @@
 }
 .canvas{
 	display: block !important;
+	min_width:0;
+}
+.cabinet_box{
+	width: 20%;
 }

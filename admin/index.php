@@ -49,7 +49,7 @@
 				</div>
 			</div>
 				<table class="canvas-table" id="table_list">
-					<tr id="table_list-names"><td>№</td><td>Дисциплина</td><td>Преподаватель</td><td>Аудитория</td></tr>
+					<tr id="table_list-names"><td>№</td><td class="lesson_box">Дисциплина</td><td class="teacher_box">Преподаватель</td><td class="cabinet_box">Аудитория</td></tr>
 
 					<tr id="table_list-1"><td>1</td>
 						<td><select id="lesson-1" class="lesson"><option value="0">-----------</option>

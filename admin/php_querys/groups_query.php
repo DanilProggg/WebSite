@@ -6,8 +6,8 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 
 
-$action = mysql_real_escape_string($data['action']);
-$object =  mysql_real_escape_string($data['object']);
+$action = $data['action'];
+$object = $data['object'];
 
 
 if($action == 'DELETE'){

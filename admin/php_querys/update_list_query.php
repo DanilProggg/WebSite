@@ -4,8 +4,8 @@ header('Content-Type: application/json');
 include_once ("../db.php");
 
 //Получение даты и группы
-$date = mysql_real_escape_string($_GET['date']);
-$group = mysql_real_escape_string(urldecode($_GET['group']));
+$date = $_GET['date'];
+$group = urldecode($_GET['group']);
 
 
 $result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND`группа`='%s'", $date,$group));

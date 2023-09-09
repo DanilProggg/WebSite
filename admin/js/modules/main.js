@@ -3,7 +3,19 @@ import jQuery from 'jquery';
 
 
 export function select2_main(){
-	$("#group").select2();
+	if($(window).width() < 1280){
+		$("#group").select2();
+	$(".lesson").select2({
+		width:250
+	});
+	$('.teacher').select2({
+		width:250
+	});
+	$('.cabinet').select2({
+		width:150
+	});
+} else{
+		$("#group").select2();
 	$(".lesson").select2({
 		width:300
 	});
@@ -13,6 +25,8 @@ export function select2_main(){
 	$('.cabinet').select2({
 		width:150
 	});
+}
+	
 
 }
 
