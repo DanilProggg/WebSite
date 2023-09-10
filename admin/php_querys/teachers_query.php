@@ -13,10 +13,14 @@ $object = $data['object'];
 
 
 if($data['action'] == 'DELETE'){
-	$query = sprintf("DELETE FROM `преподаватели` WHERE `преподаватели`.`id_преподавателя` = '%s'",$data['id']);
+	$query = sprintf("DELETE FROM `преподаватели` WHERE `преподаватели`.`id_преподавателя` = '%s'",
+		mysqli_real_escape_string($db,$data['id']));
 }
 if($data['action'] == 'ADD'){
-	$query = sprintf("INSERT INTO `преподаватели`(`фамилия`,`имя`,`отчество`) VALUES ('%s','%s','%s')",$data['surname'],$data['name'],$data['patronymic']);
+	$query = sprintf("INSERT INTO `преподаватели`(`фамилия`,`имя`,`отчество`) VALUES ('%s','%s','%s')",
+		mysqli_real_escape_string($db,$data['surname']),
+		mysqli_real_escape_string($db,$data['name']),
+		mysqli_real_escape_string($db,$data['patronymic']));
 }
 
 

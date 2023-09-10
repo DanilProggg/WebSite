@@ -1,6 +1,12 @@
 import $ from 'jquery';
 
 export function teacher(){
+	$(".canvas-block-form-input").keyup(function(event) {
+	    if (event.keyCode === 13) {
+	        $("#add_teacher").click();
+	    }
+	});
+
 	$('.del_teacher').on('click',function() {
 	    var clickId = $(this).attr('id');
 	    delete_teacher(clickId);

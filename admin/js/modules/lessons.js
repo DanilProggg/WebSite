@@ -1,5 +1,12 @@
 import $ from 'jquery';
 export function lesson() {
+
+	$(".canvas-block-form-input").keyup(function(event) {
+	    if (event.keyCode === 13) {
+	        $("#add_lesson").click();
+	    }
+	});
+
 	$('.del_lesson').on('click',function() {
 	    var clickId = $(this).attr('id');
 	    delete_lesson(clickId);

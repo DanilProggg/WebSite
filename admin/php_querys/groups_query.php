@@ -11,10 +11,12 @@ $object = $data['object'];
 
 
 if($action == 'DELETE'){
-	$query = sprintf("DELETE FROM `группы` WHERE `группы`.`id_группы` = '%s'",$object);
+	$query = sprintf("DELETE FROM `группы` WHERE `группы`.`id_группы` = '%s'",
+		mysqli_real_escape_string($db,$object));
 }
 if($action == 'ADD'){
-	$query = sprintf("INSERT INTO `группы`(`группа`) VALUES ('%s')",$object);
+	$query = sprintf("INSERT INTO `группы`(`группа`) VALUES ('%s')",
+		mysqli_real_escape_string($db,$object));
 }
 
 

@@ -1,6 +1,12 @@
 import $ from 'jquery';
 
 export function cabinet(){
+	$(".canvas-block-form-input").keyup(function(event) {
+	    if (event.keyCode === 13) {
+	        $("#add_cabinet").click();
+	    }
+	});
+
 	$('.del_cabinet').on('click',function() {
 	    var clickId = $(this).attr('id');
 	    delete_cabinet(clickId);

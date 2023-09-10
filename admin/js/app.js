@@ -12,6 +12,9 @@ import {cabinet} from './modules/cabinets.js';
 
 $(document).ready(function() {
 	select2_main();
+	$(window).resize(function () {
+		select2_main();
+	});
 
 	$.ajax({  //Ajax запрос - запрашивает все дисиплины для дальнейшего их использования
 		url: 'php_querys/db_cleaner.php',

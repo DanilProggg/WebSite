@@ -1,6 +1,12 @@
 import $ from 'jquery';
 
 export function group(){
+	$(".canvas-block-form-input").keyup(function(event) {
+	    if (event.keyCode === 13) {
+	        $("#add_group").click();
+	    }
+	});
+
 	$('.del_group').on('click',function() {
 	    var clickId = $(this).attr('id');
 	    delete_group(clickId);
