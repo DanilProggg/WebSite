@@ -12,7 +12,7 @@
 }
 .canvas-block-units-table{
 	font-size: 18px;
-	min-width:400px;
+	width:400px;
 
 	border-collapse: collapse
 }

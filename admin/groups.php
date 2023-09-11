@@ -4,6 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
 	<link rel="stylesheet" type="text/css" href="styles/crud.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">

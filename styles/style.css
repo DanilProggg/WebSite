@@ -1,0 +1,10 @@
+body{
+	margin: 0;
+}
+.group_table{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+.group_table-unit{
+	
+}
