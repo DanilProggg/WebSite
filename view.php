@@ -3,7 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,11 +47,13 @@
 		echo date("d.m.Y");
 		?></h2>
 		<div class="table">
-			<div class="table-list">
+			<div class="table-list _title">
 				<div class="table-list-title">№</div>
-				<div class="table-list-title">Дисциплина</div>
-				<div class="table-list-title">Преподаватель</div>
-				<div class="table-list-title">Аудитория</div>
+				<div class="table-list-info">
+					<div class="table-list-title">Дисциплина</div>
+					<div class="table-list-title">Преподаватель</div>
+					<div class="table-list-title">Аудитория</div>
+				</div>
 			</div>
 			<?php
 
@@ -86,9 +91,11 @@
 
 						   echo "<div class=\"table-list\">";
 								echo "<div class=\"table-list-num\">".$i."</div>";
-								echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-								echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-								echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "<div class=\"table-list-info\">";
+									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+									echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "</div>";
 							echo "</div>";
 
 					} 
@@ -105,14 +112,16 @@
 
 <!-- Завтрашний день -->
 		<h2><?php 
-		echo $tommorow = date("d.m.Y",$tom);
+		echo date("d.m.Y",$tom);
 		?></h2>
 		<div class="table">
-			<div class="table-list">
+			<div class="table-list _title">
 				<div class="table-list-title">№</div>
-				<div class="table-list-title">Дисциплина</div>
-				<div class="table-list-title">Преподаватель</div>
-				<div class="table-list-title">Аудитория</div>
+				<div class="table-list-info">
+					<div class="table-list-title">Дисциплина</div>
+					<div class="table-list-title">Преподаватель</div>
+					<div class="table-list-title">Аудитория</div>
+				</div>
 			</div>
 			<?php
 
@@ -121,7 +130,7 @@
 			$group = urldecode($_GET['group']);
 
 			$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'",
-				mysqli_real_escape_string($db,$tommorow),
+				mysqli_real_escape_string($db,date("Y-m-d",$tom)),
 				mysqli_real_escape_string($db,$group)));
 			$row = mysqli_fetch_array($result);
 			$lessons = json_decode($row["дисциплины"],true);
@@ -150,9 +159,11 @@
 
 						  	echo "<div class=\"table-list\">";
 								echo "<div class=\"table-list-num\">".$i."</div>";
-								echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-								echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-								echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "<div class=\"table-list-info\">";
+									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+									echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "</div>";
 							echo "</div>";
 					}
 				}
@@ -163,14 +174,16 @@
 		</div>
 <!-- После завтра -->
 		<h2><?php 
-		echo $aftertommorow = date("d.m.Y",$aftertom);
+		echo date("d.m.Y",$aftertom);
 		?></h2>
 		<div class="table">
-			<div class="table-list">
+			<div class="table-list _title">
 				<div class="table-list-title">№</div>
-				<div class="table-list-title">Дисциплина</div>
-				<div class="table-list-title">Преподаватель</div>
-				<div class="table-list-title">Аудитория</div>
+				<div class="table-list-info">
+					<div class="table-list-title">Дисциплина</div>
+					<div class="table-list-title">Преподаватель</div>
+					<div class="table-list-title">Аудитория</div>
+				</div>
 			</div>
 			<?php
 
@@ -179,7 +192,7 @@
 			$group = urldecode($_GET['group']);
 
 			$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'",
-				mysqli_real_escape_string($db,$aftertommorow),
+				mysqli_real_escape_string($db,date("Y-m-d",$aftertom)),
 				mysqli_real_escape_string($db,$group)));
 			$row = mysqli_fetch_array($result);
 			$lessons = json_decode($row["дисциплины"],true);
@@ -208,9 +221,11 @@
 
 						   echo "<div class=\"table-list\">";
 								echo "<div class=\"table-list-num\">".$i."</div>";
-								echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-								echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-								echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "<div class=\"table-list-info\">";
+									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+									echo "<div class=\"table-list-class\">".$class."</div>";
+								echo "</div>";
 							echo "</div>";
 					} 
 

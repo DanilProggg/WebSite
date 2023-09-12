@@ -135,24 +135,29 @@ function updateData() {
 		dataType: 'json',
 		success:function(data){
 			for(var k = 1; k <= 6; k++ ){
+				//Делает селекты неактивными
 				$(`#lesson-${k}`).prop('disabled',false);
 				$(`#teacher-${k}`).prop('disabled',false);
 				$(`#cabinet-${k}`).prop('disabled',false);
+				//Ставит значение селектов на 0
+				$(`#lesson-${k}`).val(0).change();
+				$(`#teacher-${k}`).val(0).change();
+				$(`#cabinet-${k}`).val(0).change();
 			}
 			console.log(data['status']);	
 			if(data['status'] == 'OK'){
 				if(data.lessons.length == 0){
 					for(var k = 1; k <= 6; k++ ){
-							$(`#lesson-${k}`).val(0).change();;
-							$(`#teacher-${k}`).val(0).change();;
-							$(`#cabinet-${k}`).val(0).change();;
+							$(`#lesson-${k}`).val(0).change();
+							$(`#teacher-${k}`).val(0).change();
+							$(`#cabinet-${k}`).val(0).change();
 					}
 				} else {
 					for(var k = 1; k <= 6; k++ ){
 						if(Object.hasOwn(data.lessons, k) == true){
-							$(`#lesson-${k}`).val(data.lessons[k].lesson).change();;
-							$(`#teacher-${k}`).val(data.lessons[k].teacher).change();;
-							$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();;
+							$(`#lesson-${k}`).val(data.lessons[k].lesson).change();
+							$(`#teacher-${k}`).val(data.lessons[k].teacher).change();
+							$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();
 						}
 					}
 				}
@@ -160,9 +165,9 @@ function updateData() {
 			}
 			if(data['status'] == 'EMPTY') {
 				for(var k = 1; k <= 6; k++ ){
-						$(`#lesson-${k}`).val(0).change();;
-						$(`#teacher-${k}`).val(0).change();;
-						$(`#cabinet-${k}`).val(0).change();;
+						$(`#lesson-${k}`).val(0).change();
+						$(`#teacher-${k}`).val(0).change();
+						$(`#cabinet-${k}`).val(0).change();
 					}
 			}
 		}
