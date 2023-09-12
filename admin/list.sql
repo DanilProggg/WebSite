@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 04 2023 г., 17:11
+-- Время создания: Сен 12 2023 г., 10:01
 -- Версия сервера: 5.7.33
--- Версия PHP: 7.2.34
+-- Версия PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,7 @@ INSERT INTO `дисциплины` (`id_дисциплины`, `название
 (2, 'Информатика'),
 (6, 'Русский язык'),
 (11, 'Обществознание'),
-(12, 'Психология'),
-(22, 'Веб-дизайн');
+(12, 'Психология');
 
 -- --------------------------------------------------------
 
@@ -64,7 +63,8 @@ CREATE TABLE `преподаватели` (
 
 INSERT INTO `преподаватели` (`id_преподавателя`, `фамилия`, `имя`, `отчество`, `id_дисциплины`) VALUES
 (3, 'Ткаченко', 'Алла', 'Юрьевна', 1),
-(9, 'Назарова', 'Ольга', 'Игоревна', NULL);
+(9, 'Назарова', 'Ольга', 'Игоревна', NULL),
+(10, 'Кривобок', 'Д.', 'М.', NULL);
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,8 @@ CREATE TABLE `аудитории` (
 INSERT INTO `аудитории` (`id_аудитории`, `номер`, `id_дисциплины`) VALUES
 (1, '314', 1),
 (5, '311', NULL),
-(6, '301', NULL);
+(7, '404/2', NULL),
+(8, '103', NULL);
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,13 @@ CREATE TABLE `группы` (
 
 INSERT INTO `группы` (`id_группы`, `группа`) VALUES
 (1, 'ИСП-22-4'),
-(2, 'ИСП-22-3');
+(2, 'ИСП-22-3'),
+(3, 'ИСП-22-5'),
+(4, 'ТЭО-21'),
+(5, 'Э\\С-22д'),
+(6, 'АСА-23д'),
+(7, 'МТО-22-2'),
+(8, 'МТО-19-2');
 
 -- --------------------------------------------------------
 
@@ -113,7 +120,7 @@ INSERT INTO `группы` (`id_группы`, `группа`) VALUES
 --
 
 CREATE TABLE `расписание` (
-  `id_расписания` int(11) NOT NULL,
+  `id_расписания` int(100) NOT NULL,
   `дата` date NOT NULL,
   `группа` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `дисциплины` json NOT NULL
@@ -125,7 +132,7 @@ CREATE TABLE `расписание` (
 
 INSERT INTO `расписание` (`id_расписания`, `дата`, `группа`, `дисциплины`) VALUES
 (160, '2023-09-16', '1', '{\"1\": {\"lesson\": \"1\", \"cabinet\": \"1\", \"teacher\": \"3\"}, \"2\": {\"lesson\": \"1\", \"cabinet\": \"1\", \"teacher\": \"3\"}, \"3\": {\"lesson\": \"1\", \"cabinet\": \"1\", \"teacher\": \"3\"}}'),
-(161, '2023-09-04', '1', '{\"1\": {\"lesson\": \"2\", \"cabinet\": \"5\", \"teacher\": \"9\"}}');
+(167, '2023-09-12', '4', '{\"1\": {\"lesson\": \"6\", \"cabinet\": \"7\", \"teacher\": \"10\"}}');
 
 --
 -- Индексы сохранённых таблиц
@@ -171,31 +178,31 @@ ALTER TABLE `расписание`
 -- AUTO_INCREMENT для таблицы `дисциплины`
 --
 ALTER TABLE `дисциплины`
-  MODIFY `id_дисциплины` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_дисциплины` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `преподаватели`
 --
 ALTER TABLE `преподаватели`
-  MODIFY `id_преподавателя` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_преподавателя` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT для таблицы `аудитории`
 --
 ALTER TABLE `аудитории`
-  MODIFY `id_аудитории` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_аудитории` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `группы`
 --
 ALTER TABLE `группы`
-  MODIFY `id_группы` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_группы` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT для таблицы `расписание`
 --
 ALTER TABLE `расписание`
-  MODIFY `id_расписания` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id_расписания` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

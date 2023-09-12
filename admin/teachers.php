@@ -49,8 +49,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="right_menu">
-		</div>
 	</main>
 
 

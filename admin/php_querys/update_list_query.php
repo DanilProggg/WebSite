@@ -8,7 +8,7 @@ $date = $_GET['date'];
 $group = urldecode($_GET['group']);
 
 
-$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND`группа`='%s'", 
+$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'", 
 	mysqli_real_escape_string($db,$date),
 	mysqli_real_escape_string($db,$group)));
 $row = mysqli_fetch_array($result);

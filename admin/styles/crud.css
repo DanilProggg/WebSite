@@ -1,5 +1,5 @@
 :root {
-  --table-height:25px;
+  --table-height:35px;
 }
  h2{
  	margin: 20px 0;
@@ -17,21 +17,23 @@
 	border-collapse: collapse
 }
 .canvas-block-units-table tr{
-	height: 40px;
+	
 
 	border-bottom-style: solid;
 	border-bottom-color: black;
+	height:var(--table-height);
 
 }
 .canvas-block-units-unit{
 
 	padding-left: 10px;
-	height: var(--table-height);
+
 }
 .canvas-block-units-img{
 	padding-right: 10px;
 	float: right;
-	height: var(--table-height);
+	height: calc(var(--table-height)*2/3);
+
 }
 .canvas-block-units-img:hover{
 	cursor: pointer;
@@ -62,10 +64,7 @@
 	border-radius: 4px;
 	float: right;
 }
-.canvas{
-	display: block !important;
-	min_width:0;
-}
+
 .cabinet_box{
 	width: 20%;
 }

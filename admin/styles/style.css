@@ -90,10 +90,6 @@ a{
 
 
 
-.right_menu{
-	min-width: 50px;
-}
-
 
 
 
@@ -106,5 +102,6 @@ a{
 	flex-direction: column;
 	display: flex;
 	margin-bottom: 20px;
+	margin-right: 20px;
 
 }

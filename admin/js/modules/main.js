@@ -3,7 +3,7 @@ import jQuery from 'jquery';
 
 
 export function select2_main(){
-	if($(window).width() < 1280){
+	if($(window).width() < 1390){
 		$("#group").select2();
 	$(".lesson").select2({
 		width:250
@@ -17,7 +17,7 @@ export function select2_main(){
 } else{
 		$("#group").select2();
 	$(".lesson").select2({
-		width:300
+		width:450
 	});
 	$('.teacher').select2({
 		width:450
