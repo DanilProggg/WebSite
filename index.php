@@ -6,6 +6,7 @@
 	?>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 </head>
 <body>
 	<main>
-		<h1>Расписание</h1>
+		<h1 class="header_title">Расписание</h1>
 		<div class="group_table">
 			<?php 
 				$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
