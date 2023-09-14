@@ -9,10 +9,11 @@
 	justify-content: center;
 	display: flex;
 	margin-bottom: 20px;
+	flex-wrap: wrap-reverse;
 }
 .canvas-block-units-table{
 	font-size: 18px;
-	width:400px;
+	width: 400px;
 
 	border-collapse: collapse
 }
