@@ -54,7 +54,8 @@
 		?>
 		<div class="big_table">
 			<h2><?php 
-			echo $dayWeek[date("N")]. " " .date("d.m.Y");
+			//делаем -1 в дне недели потомучто массив начинаеться с 0
+			echo $dayWeek[date("N") - 1]. " " .date("d.m.Y");
 			?></h2>
 			<div class="table">
 				<div class="table-list _title">
@@ -124,7 +125,8 @@
 <!-- Завтрашний день -->
 		<div class="big_table">
 			<h2><?php 
-			echo $dayWeek[date("N",$tom)] ." ". date("d.m.Y",$tom);
+			//делаем -1 в дне недели потомучто массив начинаеться с 0
+			echo $dayWeek[date("N",$tom) - 1] ." ". date("d.m.Y",$tom);
 			?></h2>
 			<div class="table">
 				<div class="table-list _title">
@@ -188,7 +190,8 @@
 <!-- После завтра -->
 		<div class="big_table">
 			<h2><?php 
-			echo $dayWeek[date("N",$aftertom)] ." ". date("d.m.Y",$aftertom);
+			//делаем -1 в дне недели потомучто массив начинаеться с 0
+			echo $dayWeek[date("N",$aftertom) - 1] ." ". date("d.m.Y",$aftertom);
 			?></h2>
 			<div class="table">
 				<div class="table-list _title">
