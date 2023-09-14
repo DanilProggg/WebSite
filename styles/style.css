@@ -1,13 +1,15 @@
 :root{
-	--main-color:#3399FF;
+	--main-color:#0066FF;
+	--bg-color:#f3f3f3;
 }
 body{
-	background:#f3f3f3;
+	background:var(--bg-color);
+	background-size: 100%;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
 h1{
-
+	color: var(--main-color);
 	text-align: center;
 	font-size: 38px;
 }
@@ -38,6 +40,7 @@ a{
 	grid-template-columns: repeat(4, 1fr);
 }
 .group_table-unit{
+	background: var(--bg-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
