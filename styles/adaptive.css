@@ -39,6 +39,9 @@
 	main{
 		margin: 0;
 	}
+	.header_title{
+		font-size: 68px;
+	}
 	.big_table{
 		margin: 0;
 	}
