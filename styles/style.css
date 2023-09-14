@@ -103,9 +103,11 @@ a{
 	justify-content: center;
 }
 .not_found{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: white;
-	text-align: center;
-	font-size: 1.5rem;
+	font-size: 32px;
 	padding: 10px 0;
 }
 
