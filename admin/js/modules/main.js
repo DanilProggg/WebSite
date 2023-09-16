@@ -149,10 +149,19 @@ function updateData() {
 				$(`#lesson-${k}`).prop('disabled',false);
 				$(`#teacher-${k}`).prop('disabled',false);
 				$(`#cabinet-${k}`).prop('disabled',false);
+
+				$(`#lesson-${k}-2`).prop('disabled',false);
+				$(`#teacher-${k}-2`).prop('disabled',false);
+				$(`#cabinet-${k}-2`).prop('disabled',false);
+
 				//Ставит значение селектов на 0
 				$(`#lesson-${k}`).val(0).change();
 				$(`#teacher-${k}`).val(0).change();
 				$(`#cabinet-${k}`).val(0).change();
+
+				$(`#lesson-${k}-2`).val(0).change();
+				$(`#teacher-${k}-2`).val(0).change();
+				$(`#cabinet-${k}-2`).val(0).change();
 			}
 			console.log(data['status']);	
 			if(data['status'] == 'OK'){
