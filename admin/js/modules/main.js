@@ -72,16 +72,26 @@ function saveData() {
 				break;
 			}
 
-		} else {
 
-			
+		} else {
+			if($(`#lesson-${i}-2`).val() == 0 || $(`#teacher-${i}-2`).val() == 0 || $(`#cabinet-${i}-2`).val() == 0){
+								
+				if(!($(`#lesson-${i}-2`).val() == 0 && $(`#teacher-${i}-2`).val() == 0 && $(`#cabinet-${i}-2`).val() == 0)){
+					lessons_validate = false;
+					break;
+				}
+			} 
 			saveData.lessons[i] = {
 				lesson: $(`#lesson-${i}`).val(),
 				teacher : $(`#teacher-${i}`).val(),
-				cabinet : $(`#cabinet-${i}`).val()
-				}
-				
+				cabinet : $(`#cabinet-${i}`).val(),
+				lesson2: $(`#lesson-${i}-2`).val(),
+				teacher2 : $(`#teacher-${i}-2`).val(),
+				cabinet2 : $(`#cabinet-${i}-2`).val()
+		
 			}	
+			
+		}				
 	}  
 	//валидация календаря
 	if(saveData.date === ""){
@@ -110,7 +120,7 @@ function saveData() {
 			contentType: 'application/json',
 			data: JSON.stringify(saveData),
 			success:function(){
-				console.log('Data loaded');
+				console.log(saveData);
 			}
 		});
 		saveForm();
@@ -158,6 +168,15 @@ function updateData() {
 							$(`#lesson-${k}`).val(data.lessons[k].lesson).change();
 							$(`#teacher-${k}`).val(data.lessons[k].teacher).change();
 							$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();
+							if(data.lessons[k].lesson2 != 0 && data.lessons[k].teacher2 != 0 && data.lessons[k].cabinet2 != 0){
+
+								$(`#chk_table_list-${k}-2`).prop('checked', true);
+								$(`#table_list-${k}-2`).css("display","table-row");
+
+								$(`#lesson-${k}-2`).val(data.lessons[k].lesson2).change();
+								$(`#teacher-${k}-2`).val(data.lessons[k].teacher2).change();
+								$(`#cabinet-${k}-2`).val(data.lessons[k].cabinet2).change();
+							}
 						}
 					}
 				}
@@ -182,3 +201,78 @@ function saveForm(){
 	$('.save_window').css('opacity','1');
 	setTimeout(() => { $('.save_window').css('opacity','0');}, 2000);
 };
+
+export function s_group(){
+	$("#chk_table_list-1-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-1-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-1-2').css("display","none");
+	    	$(`#lesson-1-2`).val(0).change();
+			$(`#teacher-1-2`).val(0).change();
+			$(`#cabinet-1-2`).val(0).change();
+	    }
+	});
+	$("#chk_table_list-2-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-2-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-2-2').css("display","none");
+	    	$(`#lesson-2-2`).val(0).change();
+			$(`#teacher-2-2`).val(0).change();
+			$(`#cabinet-2-2`).val(0).change();
+	    }
+	});
+	$("#chk_table_list-3-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-3-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-3-2').css("display","none");
+	    	$(`#lesson-3-2`).val(0).change();
+			$(`#teacher-3-2`).val(0).change();
+			$(`#cabinet-3-2`).val(0).change();
+	    }
+	});
+	$("#chk_table_list-4-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-4-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-4-2').css("display","none");
+	    	$(`#lesson-4-2`).val(0).change();
+			$(`#teacher-4-2`).val(0).change();
+			$(`#cabinet-4-2`).val(0).change();
+	    }
+	});
+	$("#chk_table_list-5-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-5-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-5-2').css("display","none");
+	    	$(`#lesson-5-2`).val(0).change();
+			$(`#teacher-5-2`).val(0).change();
+			$(`#cabinet-5-2`).val(0).change();
+	    }
+	});
+	$("#chk_table_list-6-2").click(function() {
+    	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
+	    if($(this).is(":checked")) // "this" refers to the element that fired the event
+	    {
+	       $('#table_list-6-2').css("display","table-row");
+	    } else {
+	    	$('#table_list-6-2').css("display","none");
+	    	$(`#lesson-6-2`).val(0).change();
+			$(`#teacher-6-2`).val(0).change();
+			$(`#cabinet-6-2`).val(0).change();
+	    }
+	});
+}

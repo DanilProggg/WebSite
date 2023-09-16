@@ -2,10 +2,16 @@
 	main{
 		margin: 0 400px;
 	}
+	.main_page{
+		margin: 200px 100px;
+	}
 }
 @media only screen and (max-width: 1440px) {
 	main{
 		margin: 0 300px;
+	}
+	.main_page{
+		margin: 200px 50px;
 	}
 
 }
@@ -14,31 +20,57 @@
 	main{
 		margin: 0 200px;
 	}
-
+	.main_page{
+		margin: 100px 180px;
+		flex-direction: column;
+	}
+	.group_list{
+		margin-top: 100px;
+	}
 }
 
 
 @media only screen and (max-width: 1024px) {
+	.header_title{
+		font-size: 68px;
+	}
 	main{
 		margin: 0 50px;
+	}
+	.main_page{
+		margin: 100px 50px;
+	}
+	.timetable-row-unit{
+		font-size: 32px;
+
+	}
+	.main_unit,.timetable{
+		width: 100%;
 	}
 	.group_table{
 		grid-template-columns: 1fr 1fr;
 	}
 	.group_table-unit{
-		height: 100px;
-		font-size: 42px;
-		font-weight: ;
+		height: 80px;
+		font-size: 34px;
+
 	}
 }
 
 @media only screen and (max-width: 720px) {
 	h2{
-		font-size: 34px;
+		font-size: 24px;
 	}
 	main{
-		margin: 0;
+		margin: 0px;
 	}
+	.main_page{
+		margin: 100px 0;
+	}
+	.timetable{
+		max-width: 1920px;
+	}
+
 	.header_title{
 		font-size: 68px;
 	}
@@ -49,30 +81,22 @@
 		padding: 0;
 		border: none;
 	}
-	.table-list-title,._title{
-		display: none;
-	}
-	.table-list:nth-child(even){
-		background: #ece9e9;
-	}
-	.table-list:nth-child(odd){
-		background: white;
+	.group_table-unit{
+		width: 100%;
 	}
 	.table-list{
 		border-collapse: collapse;
-		grid-template-columns: 1fr 8fr;
-	}
-	.table-list-info{
-		grid-template-columns: 1fr;
-		grid-template-rows: 3fr 3fr 3fr;
 	}
 	.table-list-num,.table-list-lesson,.table-list-teacher,.table-list-class{
-	padding: 5px 0;
+		padding: 5px 0;
+		font-size: 1em;
 	
 	}
 	/*----*/
 	.not_found{
-		height: 130px;
+		font-size: 22px;
+		height: 60px;
+		padding: 0;
 	}
 
 }

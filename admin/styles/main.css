@@ -91,7 +91,18 @@
 	font-weight: 500;
 	font-size: 28px;
 }
+.s_group{ /* Second group столбик с чекбоксом*/
+	max-width:40px;
+	font-size: 16px;
+}
+.under_table{
+	display: none;
+}
 
+.chk_box{
+	width: 15px;
+	height: 15px;
+}
 
 
 
