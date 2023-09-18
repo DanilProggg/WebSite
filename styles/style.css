@@ -27,7 +27,7 @@ h2{
 h3{
 	text-align: center;
 }
-main{
+.main_page, .main_view{
 	margin: 0 500px;
 	padding-bottom: 100px;
 }

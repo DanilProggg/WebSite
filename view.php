@@ -36,7 +36,7 @@
 	?>
 </head>
 <body>
-	<main>
+	<main class="main_view">
 		<?php 
 			$group = urldecode($_GET['group']);
 

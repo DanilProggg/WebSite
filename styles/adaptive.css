@@ -1,5 +1,5 @@
 @media only screen and (max-width: 1600px) {
-	main{
+	.main_view{
 		margin: 0 400px;
 	}
 	.main_page{
@@ -7,7 +7,7 @@
 	}
 }
 @media only screen and (max-width: 1440px) {
-	main{
+	.main_view{
 		margin: 0 300px;
 	}
 	.main_page{
@@ -17,7 +17,7 @@
 }
 
 @media only screen and (max-width: 1280px) {
-	main{
+	.main_view{
 		margin: 0 200px;
 	}
 	.main_page{
@@ -35,7 +35,7 @@
 	.header_title{
 		font-size: 68px;
 	}
-	main{
+	.main_view{
 		margin: 0 50px;
 	}
 	.main_page{
@@ -63,8 +63,11 @@
 		font-size: 20px;
 	}
 	
-	main{
-		margin: 100px 5px;
+	.main_view{
+		margin: 0 5px;
+	}
+	.main_page{
+		margin: 100px 50px;
 	}
 	
 	.timetable{
