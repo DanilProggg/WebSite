@@ -89,7 +89,7 @@
 		width: 100%;
 	}
 	.table-list{
-		grid-template-columns: 1fr 6fr 8fr 4fr;
+		grid-template-columns: 1fr 1fr 6fr 8fr 4fr;
 		border-collapse: collapse;
 	}
 	.table-list-num,.table-list-lesson,.table-list-teacher,.table-list-class{

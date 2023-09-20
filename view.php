@@ -61,6 +61,7 @@
 			<div class="table">
 				<div class="table-list _title">
 					<div class="table-list-title">№</div>
+					<div class="table-list-title"></div>
 					<div class="table-list-title">Дисциплина</div>
 					<div class="table-list-title">Преподаватель</div>
 					<div class="table-list-title">Аудитория</div>
@@ -80,7 +81,7 @@
 				if($lessons != null){
 					for ($i=1; $i <= 6; $i++) { 
 						
-						if($lessons[$i] != null){
+						if($lessons[$i] != null || $lessons[$i."-2"] != null){
 							
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
 								mysqli_real_escape_string($db,$lessons[$i]["lesson"])));
@@ -89,7 +90,7 @@
 
 							// 2 подгруппа урок
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["lesson2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["lesson"])));
 							$row = mysqli_fetch_array($result);
 							$lesson2 = $row["название"];
 
@@ -101,7 +102,7 @@
 							$teacher_patronymic = $row["отчество"];
 
 							$result = mysqli_query($db, sprintf("SELECT * FROM `преподаватели` WHERE `id_преподавателя`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["teacher2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["teacher"])));
 							$row = mysqli_fetch_array($result);
 							$teacher_name2 = $row["имя"];
 							$teacher_surname2 = $row["фамилия"];
@@ -113,22 +114,35 @@
 							$class = $row["номер"];
 
 							$result = mysqli_query($db, sprintf("SELECT `номер` FROM `аудитории` WHERE `id_аудитории`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["cabinet2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["cabinet"])));
 							$row = mysqli_fetch_array($result);
 							$class2 = $row["номер"];
 
+							
+
+							if($lessons[$i] != null) {
 							   echo "<div class=\"table-list\">";
 									echo "<div class=\"table-list-num\">".$i."</div>";
+									if($lessons[$i."-2"] != null){
+										echo "<div class=\"n_group\">I</div>"; 
+										} else {
+											echo "<div></div>";
+										}
 									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
 									echo "<div class=\"table-list-class\">".$class."</div>";
 								echo "</div>";
-
-							// Если есть есть отдельное расписание для 2 подгруппы
-							if(($lessons[$i]["lesson2"] != null && $lessons[$i]["lesson2"] != 0) && ($lessons[$i]["teacher2"] != null && $lessons[$i]["teacher"] != 0) && ($lessons[$i]["cabinet2"] != null && $lessons[$i]["cabinet2"] != 0)) {
+							}
+							// Если есть есть расписание для 2 подгруппы
+							if($lessons[$i."-2"] != null) {
 
 								echo "<div class=\"table-list\">";
-									echo "<div class=\"table-list-num\">"." "."</div>";
+									if($lessons[$i] == null){
+										echo "<div class=\"table-list-num\">".$i."</div>";
+									} else {
+										echo "<div class=\"table-list-num\">"." "."</div>";
+									}
+									echo "<div class=\"n_group\">II</div>";
 									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
 									echo "<div class=\"table-list-class\">".$class2."</div>";
@@ -157,6 +171,7 @@
 			<div class="table">
 				<div class="table-list _title">
 					<div class="table-list-title">№</div>
+					<div class="table-list-title"></div>
 					<div class="table-list-title">Дисциплина</div>
 					<div class="table-list-title">Преподаватель</div>
 					<div class="table-list-title">Аудитория</div>
@@ -176,7 +191,7 @@
 				if($lessons != null){
 					for ($i=1; $i <= 6; $i++) { 
 						
-						if($lessons[$i] != null){
+						if($lessons[$i] != null || $lessons[$i."-2"] != null){
 							
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
 								mysqli_real_escape_string($db,$lessons[$i]["lesson"])));
@@ -185,7 +200,7 @@
 
 							// 2 подгруппа урок
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["lesson2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["lesson"])));
 							$row = mysqli_fetch_array($result);
 							$lesson2 = $row["название"];
 
@@ -197,7 +212,7 @@
 							$teacher_patronymic = $row["отчество"];
 
 							$result = mysqli_query($db, sprintf("SELECT * FROM `преподаватели` WHERE `id_преподавателя`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["teacher2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["teacher"])));
 							$row = mysqli_fetch_array($result);
 							$teacher_name2 = $row["имя"];
 							$teacher_surname2 = $row["фамилия"];
@@ -209,31 +224,50 @@
 							$class = $row["номер"];
 
 							$result = mysqli_query($db, sprintf("SELECT `номер` FROM `аудитории` WHERE `id_аудитории`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["cabinet2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["cabinet"])));
 							$row = mysqli_fetch_array($result);
 							$class2 = $row["номер"];
 
-							  	echo "<div class=\"table-list\">";
+							
+
+							if($lessons[$i] != null) {
+							   echo "<div class=\"table-list\">";
 									echo "<div class=\"table-list-num\">".$i."</div>";
+									if($lessons[$i."-2"] != null){
+										echo "<div class=\"n_group\">I</div>"; 
+										} else {
+											echo "<div></div>";
+										}
 									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
 									echo "<div class=\"table-list-class\">".$class."</div>";
 								echo "</div>";
-
-							if(($lessons[$i]["lesson2"] != null && $lessons[$i]["lesson2"] != 0) && ($lessons[$i]["teacher2"] != null && $lessons[$i]["teacher"] != 0) && ($lessons[$i]["cabinet2"] != null && $lessons[$i]["cabinet2"] != 0)) {
+							}
+							// Если есть есть расписание для 2 подгруппы
+							if($lessons[$i."-2"] != null) {
 
 								echo "<div class=\"table-list\">";
-									echo "<div class=\"table-list-num\">"." "."</div>";
+									if($lessons[$i] == null){
+										echo "<div class=\"table-list-num\">".$i."</div>";
+									} else {
+										echo "<div class=\"table-list-num\">"." "."</div>";
+									}
+									echo "<div class=\"n_group\">II</div>";
 									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
 									echo "<div class=\"table-list-class\">".$class2."</div>";
 								echo "</div>";
 							}
-						}
+
+						} 
 					}
-				}  else {
+				} else {
 					echo "<div class=\"not_found\">Пары отсутсвуют</div>";
 				}
+				
+				
+				
+				
 				?>
 			</div>
 		</div>
@@ -246,6 +280,7 @@
 			<div class="table">
 				<div class="table-list _title">
 					<div class="table-list-title">№</div>
+					<div class="table-list-title"></div>
 					<div class="table-list-title">Дисциплина</div>
 					<div class="table-list-title">Преподаватель</div>
 					<div class="table-list-title">Аудитория</div>
@@ -266,7 +301,7 @@
 				if($lessons != null){
 					for ($i=1; $i <= 6; $i++) { 
 						
-						if($lessons[$i] != null){
+						if($lessons[$i] != null || $lessons[$i."-2"] != null){
 							
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
 								mysqli_real_escape_string($db,$lessons[$i]["lesson"])));
@@ -275,7 +310,7 @@
 
 							// 2 подгруппа урок
 							$result = mysqli_query($db, sprintf("SELECT `название` FROM `дисциплины` WHERE `id_дисциплины`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["lesson2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["lesson"])));
 							$row = mysqli_fetch_array($result);
 							$lesson2 = $row["название"];
 
@@ -287,7 +322,7 @@
 							$teacher_patronymic = $row["отчество"];
 
 							$result = mysqli_query($db, sprintf("SELECT * FROM `преподаватели` WHERE `id_преподавателя`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["teacher2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["teacher"])));
 							$row = mysqli_fetch_array($result);
 							$teacher_name2 = $row["имя"];
 							$teacher_surname2 = $row["фамилия"];
@@ -299,32 +334,50 @@
 							$class = $row["номер"];
 
 							$result = mysqli_query($db, sprintf("SELECT `номер` FROM `аудитории` WHERE `id_аудитории`='%s'",
-								mysqli_real_escape_string($db,$lessons[$i]["cabinet2"])));
+								mysqli_real_escape_string($db,$lessons[$i."-2"]["cabinet"])));
 							$row = mysqli_fetch_array($result);
 							$class2 = $row["номер"];
 
+							
+
+							if($lessons[$i] != null) {
 							   echo "<div class=\"table-list\">";
 									echo "<div class=\"table-list-num\">".$i."</div>";
+									if($lessons[$i."-2"] != null){
+										echo "<div class=\"n_group\">I</div>"; 
+										} else {
+											echo "<div></div>";
+										}
 									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
 									echo "<div class=\"table-list-class\">".$class."</div>";
 								echo "</div>";
-
-							if(($lessons[$i]["lesson2"] != null && $lessons[$i]["lesson2"] != 0) && ($lessons[$i]["teacher2"] != null && $lessons[$i]["teacher"] != 0) && ($lessons[$i]["cabinet2"] != null && $lessons[$i]["cabinet2"] != 0)) {
+							}
+							// Если есть есть отдельное расписание для 2 подгруппы
+							if($lessons[$i."-2"] != null) {
 
 								echo "<div class=\"table-list\">";
+								if($lessons[$i] == null){
+									echo "<div class=\"table-list-num\">".$i."</div>";	
+								} else{
 									echo "<div class=\"table-list-num\">"." "."</div>";
+								}
+									echo "<div class=\"n_group\">II</div>";
 									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
 									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
 									echo "<div class=\"table-list-class\">".$class2."</div>";
 								echo "</div>";
 							}
-						} 
 
+						} 
 					}
-				}else {
+				} else {
 					echo "<div class=\"not_found\">Пары отсутсвуют</div>";
 				}
+				
+				
+				
+				
 				?>
 			</div>
 		</div>

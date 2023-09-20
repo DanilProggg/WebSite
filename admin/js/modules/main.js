@@ -53,46 +53,43 @@ function saveData() {
 	const saveData = {
 		date: $('#date').val(),
 		group: $('#group').val(),
-		lessons:{}
+		lessons : {}
 	};
+
 
 	let date_validate = false;
 	let lessons_validate = true;
 	let calander_validate = false;
 
 	for (var i = 1; i <= 6; i++) {
-
-
+		//Если хотябы 1 элемент не выбран
 		if($(`#lesson-${i}`).val() == 0 || $(`#teacher-${i}`).val() == 0 || $(`#cabinet-${i}`).val() == 0){
-			
 			if(!($(`#lesson-${i}`).val() == 0 && $(`#teacher-${i}`).val() == 0 && $(`#cabinet-${i}`).val() == 0)){
-
-
 				lessons_validate = false;
 				break;
 			}
-
-
-		} else {
-			if($(`#lesson-${i}-2`).val() == 0 || $(`#teacher-${i}-2`).val() == 0 || $(`#cabinet-${i}-2`).val() == 0){
-								
-				if(!($(`#lesson-${i}-2`).val() == 0 && $(`#teacher-${i}-2`).val() == 0 && $(`#cabinet-${i}-2`).val() == 0)){
-					lessons_validate = false;
-					break;
-				}
-			} 
+		} else{
 			saveData.lessons[i] = {
-				lesson: $(`#lesson-${i}`).val(),
-				teacher : $(`#teacher-${i}`).val(),
-				cabinet : $(`#cabinet-${i}`).val(),
-				lesson2: $(`#lesson-${i}-2`).val(),
-				teacher2 : $(`#teacher-${i}-2`).val(),
-				cabinet2 : $(`#cabinet-${i}-2`).val()
+				lesson 	: 	$(`#lesson-${i}`).val(),
+				teacher : 	$(`#teacher-${i}`).val(),
+				cabinet : 	$(`#cabinet-${i}`).val(),
+			}
+		}
+
+		if($(`#lesson-${i}-2`).val() == 0 || $(`#teacher-${i}-2`).val() == 0 || $(`#cabinet-${i}-2`).val() == 0){
+			if(!($(`#lesson-${i}-2`).val() == 0 && $(`#teacher-${i}-2`).val() == 0 && $(`#cabinet-${i}-2`).val() == 0)){
+				lessons_validate = false;
+				break;
+			}
+		} else {
+			saveData.lessons[`${i}-2`] = {
+				lesson 	: 	$(`#lesson-${i}-2`).val(),
+				teacher : 	$(`#teacher-${i}-2`).val(),
+				cabinet : 	$(`#cabinet-${i}-2`).val(),
+			}
+		}
 		
-			}	
-			
-		}				
-	}  
+	}		  
 	//валидация календаря
 	if(saveData.date === ""){
 		calander_validate = false;
@@ -125,7 +122,7 @@ function saveData() {
 		});
 		saveForm();
 	} else {
-			errorForm();
+		errorForm();
 	}
 }
 
@@ -138,6 +135,13 @@ function updateData() {
 		$(`#lesson-${k}`).prop('disabled','disabled');
 		$(`#teacher-${k}`).prop('disabled','disabled');
 		$(`#cabinet-${k}`).prop('disabled','disabled');
+
+		$(`#lesson-${k}-2`).prop('disabled','disabled');
+		$(`#teacher-${k}-2`).prop('disabled','disabled');
+		$(`#cabinet-${k}-2`).prop('disabled','disabled');
+
+		$(`#chk_table_list-${k}-2`).prop('checked', false);
+		$(`#table_list-${k}-2`).css("display","none");
 	}
 	$.ajax({
 		url: 'php_querys/update_list_query.php' + '?' + params,
@@ -145,7 +149,7 @@ function updateData() {
 		dataType: 'json',
 		success:function(data){
 			for(var k = 1; k <= 6; k++ ){
-				//Делает селекты неактивными
+				//Делает селекты активными
 				$(`#lesson-${k}`).prop('disabled',false);
 				$(`#teacher-${k}`).prop('disabled',false);
 				$(`#cabinet-${k}`).prop('disabled',false);
@@ -155,6 +159,7 @@ function updateData() {
 				$(`#cabinet-${k}-2`).prop('disabled',false);
 
 				//Ставит значение селектов на 0
+
 				$(`#lesson-${k}`).val(0).change();
 				$(`#teacher-${k}`).val(0).change();
 				$(`#cabinet-${k}`).val(0).change();
@@ -174,17 +179,25 @@ function updateData() {
 				} else {
 					for(var k = 1; k <= 6; k++ ){
 						if(Object.hasOwn(data.lessons, k) == true){
-							$(`#lesson-${k}`).val(data.lessons[k].lesson).change();
-							$(`#teacher-${k}`).val(data.lessons[k].teacher).change();
-							$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();
-							if(data.lessons[k].lesson2 != 0 && data.lessons[k].teacher2 != 0 && data.lessons[k].cabinet2 != 0){
+							if(data.lessons[k].lesson != null && data.lessons[k].teacher != null && data.lessons[k].cabinet != null){
+								$(`#lesson-${k}`).val(data.lessons[k].lesson).change();
+								$(`#teacher-${k}`).val(data.lessons[k].teacher).change();
+								$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();
+							} else {
+								$(`#lesson-${k}`).val(0).change();
+								$(`#teacher-${k}`).val(0).change();
+								$(`#cabinet-${k}`).val(0).change();
+							}
+						}
+						if(Object.hasOwn(data.lessons,`${k}-2`) == true){
+							if(data.lessons[`${k}-2`].lesson != null && data.lessons[`${k}-2`].teacher != null && data.lessons[`${k}-2`].cabinet != null){
 
 								$(`#chk_table_list-${k}-2`).prop('checked', true);
 								$(`#table_list-${k}-2`).css("display","table-row");
 
-								$(`#lesson-${k}-2`).val(data.lessons[k].lesson2).change();
-								$(`#teacher-${k}-2`).val(data.lessons[k].teacher2).change();
-								$(`#cabinet-${k}-2`).val(data.lessons[k].cabinet2).change();
+								$(`#lesson-${k}-2`).val(data.lessons[`${k}-2`].lesson).change();
+								$(`#teacher-${k}-2`).val(data.lessons[`${k}-2`].teacher).change();
+								$(`#cabinet-${k}-2`).val(data.lessons[`${k}-2`].cabinet).change();
 							}
 						}
 					}

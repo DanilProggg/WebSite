@@ -72,7 +72,7 @@ a{
 .table-list{
 	background: #ece9e9;
 	display: grid;
-	grid-template-columns: 1fr 8fr 8fr 4fr;
+	grid-template-columns: 1fr 1fr 8fr 8fr 4fr;
 
 	padding: 10px 0;
 	color: #333333;
@@ -95,6 +95,11 @@ a{
 .table-list-num,.table-list-lesson,.table-list-teacher,.table-list-class{
 	display: flex;
 	align-items: center;
+	justify-content: center;
+}
+.n_group{
+	display: flex;
+	align-items:center;
 	justify-content: center;
 }
 .not_found{
