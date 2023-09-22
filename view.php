@@ -117,38 +117,61 @@
 								mysqli_real_escape_string($db,$lessons[$i."-2"]["cabinet"])));
 							$row = mysqli_fetch_array($result);
 							$class2 = $row["номер"];
-
-							
-
-							if($lessons[$i] != null) {
-							   echo "<div class=\"table-list\">";
-									echo "<div class=\"table-list-num\">".$i."</div>";
-									if($lessons[$i."-2"] != null){
-										echo "<div class=\"n_group\">I</div>"; 
-										} else {
-											echo "<div></div>";
-										}
-									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-									echo "<div class=\"table-list-class\">".$class."</div>";
-								echo "</div>";
-							}
-							// Если есть есть расписание для 2 подгруппы
-							if($lessons[$i."-2"] != null) {
-
-								echo "<div class=\"table-list\">";
-									if($lessons[$i] == null){
+							//Если разное расписание для обоих подгрупп
+							if($lessons[$i]["s_group_check_box"] == true && $lessons[$i."-2"]["s_group_check_box"] == true){
+						
+								   echo "<div class=\"table-list\">";
 										echo "<div class=\"table-list-num\">".$i."</div>";
-									} else {
+										echo "<div class=\"n_group\">I</div>"; 
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								
+								//расписание для 2 подгрупп
+									echo "<div class=\"table-list\">";
 										echo "<div class=\"table-list-num\">"." "."</div>";
-									}
-									echo "<div class=\"n_group\">II</div>";
-									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
-									echo "<div class=\"table-list-class\">".$class2."</div>";
-								echo "</div>";
-							}
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								
+								
+							} else {
+								//расписание для 1 подгруппы
+								if($lessons[$i]["s_group_check_box"] == true) {
+								   echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">I</div>"; 
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								}
+								//расписание для 2 подгруппы
+								if($lessons[$i."-2"]["s_group_check_box"] == true) {
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								}
 
+								//Общее распиание
+								if($lessons[$i]["s_group_check_box"] == false && $lessons[$i."-2"] == null){
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\"></div>";
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								}
+							}
+							
 						} 
 					}
 				} else {
@@ -230,35 +253,61 @@
 
 							
 
-							if($lessons[$i] != null) {
-							   echo "<div class=\"table-list\">";
-									echo "<div class=\"table-list-num\">".$i."</div>";
-									if($lessons[$i."-2"] != null){
-										echo "<div class=\"n_group\">I</div>"; 
-										} else {
-											echo "<div></div>";
-										}
-									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-									echo "<div class=\"table-list-class\">".$class."</div>";
-								echo "</div>";
-							}
-							// Если есть есть расписание для 2 подгруппы
-							if($lessons[$i."-2"] != null) {
-
-								echo "<div class=\"table-list\">";
-									if($lessons[$i] == null){
+							//Если разное расписание для обоих подгрупп
+							if($lessons[$i]["s_group_check_box"] == true && $lessons[$i."-2"]["s_group_check_box"] == true){
+						
+								   echo "<div class=\"table-list\">";
 										echo "<div class=\"table-list-num\">".$i."</div>";
-									} else {
+										echo "<div class=\"n_group\">I</div>"; 
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								
+								//расписание для 2 подгрупп
+									echo "<div class=\"table-list\">";
 										echo "<div class=\"table-list-num\">"." "."</div>";
-									}
-									echo "<div class=\"n_group\">II</div>";
-									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
-									echo "<div class=\"table-list-class\">".$class2."</div>";
-								echo "</div>";
-							}
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								
+								
+							} else {
+								//расписание для 1 подгруппы
+								if($lessons[$i]["s_group_check_box"] == true) {
+								   echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">I</div>"; 
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								}
+								//расписание для 2 подгруппы
+								if($lessons[$i."-2"]["s_group_check_box"] == true) {
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								}
 
+								//Общее распиание
+								if($lessons[$i]["s_group_check_box"] == false && $lessons[$i."-2"] == null){
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\"></div>";
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								}
+							}
+							
 						} 
 					}
 				} else {
@@ -340,35 +389,61 @@
 
 							
 
-							if($lessons[$i] != null) {
-							   echo "<div class=\"table-list\">";
-									echo "<div class=\"table-list-num\">".$i."</div>";
-									if($lessons[$i."-2"] != null){
+							//Если разное расписание для обоих подгрупп
+							if($lessons[$i]["s_group_check_box"] == true && $lessons[$i."-2"]["s_group_check_box"] == true){
+						
+								   echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
 										echo "<div class=\"n_group\">I</div>"; 
-										} else {
-											echo "<div></div>";
-										}
-									echo "<div class=\"table-list-lesson\">".$lesson."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
-									echo "<div class=\"table-list-class\">".$class."</div>";
-								echo "</div>";
-							}
-							// Если есть есть отдельное расписание для 2 подгруппы
-							if($lessons[$i."-2"] != null) {
-
-								echo "<div class=\"table-list\">";
-								if($lessons[$i] == null){
-									echo "<div class=\"table-list-num\">".$i."</div>";	
-								} else{
-									echo "<div class=\"table-list-num\">"." "."</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								
+								//расписание для 2 подгрупп
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">"." "."</div>";
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								
+								
+							} else {
+								//расписание для 1 подгруппы
+								if($lessons[$i]["s_group_check_box"] == true) {
+								   echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">I</div>"; 
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
 								}
-									echo "<div class=\"n_group\">II</div>";
-									echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
-									echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
-									echo "<div class=\"table-list-class\">".$class2."</div>";
-								echo "</div>";
-							}
+								//расписание для 2 подгруппы
+								if($lessons[$i."-2"]["s_group_check_box"] == true) {
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\">II</div>";
+										echo "<div class=\"table-list-lesson\">".$lesson2."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname2." ".$teacher_name2." ".$teacher_patronymic2."</div>";
+										echo "<div class=\"table-list-class\">".$class2."</div>";
+									echo "</div>";
+								}
 
+								//Общее распиание
+								if($lessons[$i]["s_group_check_box"] == false && $lessons[$i."-2"] == null){
+									echo "<div class=\"table-list\">";
+										echo "<div class=\"table-list-num\">".$i."</div>";
+										echo "<div class=\"n_group\"></div>";
+										echo "<div class=\"table-list-lesson\">".$lesson."</div>";
+										echo "<div class=\"table-list-teacher\">".$teacher_surname." ".$teacher_name." ".$teacher_patronymic."</div>";
+										echo "<div class=\"table-list-class\">".$class."</div>";
+									echo "</div>";
+								}
+							}
+							
 						} 
 					}
 				} else {

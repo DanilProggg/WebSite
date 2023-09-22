@@ -70,6 +70,7 @@ function saveData() {
 			}
 		} else{
 			saveData.lessons[i] = {
+				s_group_check_box: $(`#chk_table_list-${i}-2`).is(':checked'),
 				lesson 	: 	$(`#lesson-${i}`).val(),
 				teacher : 	$(`#teacher-${i}`).val(),
 				cabinet : 	$(`#cabinet-${i}`).val(),
@@ -83,6 +84,7 @@ function saveData() {
 			}
 		} else {
 			saveData.lessons[`${i}-2`] = {
+				s_group_check_box: $(`#chk_table_list-${i}-2`).is(':checked'),
 				lesson 	: 	$(`#lesson-${i}-2`).val(),
 				teacher : 	$(`#teacher-${i}-2`).val(),
 				cabinet : 	$(`#cabinet-${i}-2`).val(),
@@ -178,27 +180,36 @@ function updateData() {
 					}
 				} else {
 					for(var k = 1; k <= 6; k++ ){
+						try{
+							if(data.lessons[k].s_group_check_box == true || data.lessons[k+"-2"].s_group_check_box == true){
+								$(`#chk_table_list-${k}-2`).prop('checked', true);
+								$(`#table_list-${k}-2`).css("display","table-row");
+							}
+						} catch(e){
+							console.log("Exeption:"+e);
+						}
+						
 						if(Object.hasOwn(data.lessons, k) == true){
-							if(data.lessons[k].lesson != null && data.lessons[k].teacher != null && data.lessons[k].cabinet != null){
 								$(`#lesson-${k}`).val(data.lessons[k].lesson).change();
 								$(`#teacher-${k}`).val(data.lessons[k].teacher).change();
 								$(`#cabinet-${k}`).val(data.lessons[k].cabinet).change();
-							} else {
+						} else {
 								$(`#lesson-${k}`).val(0).change();
 								$(`#teacher-${k}`).val(0).change();
 								$(`#cabinet-${k}`).val(0).change();
-							}
 						}
 						if(Object.hasOwn(data.lessons,`${k}-2`) == true){
-							if(data.lessons[`${k}-2`].lesson != null && data.lessons[`${k}-2`].teacher != null && data.lessons[`${k}-2`].cabinet != null){
-
+								
 								$(`#chk_table_list-${k}-2`).prop('checked', true);
 								$(`#table_list-${k}-2`).css("display","table-row");
-
+								
 								$(`#lesson-${k}-2`).val(data.lessons[`${k}-2`].lesson).change();
 								$(`#teacher-${k}-2`).val(data.lessons[`${k}-2`].teacher).change();
 								$(`#cabinet-${k}-2`).val(data.lessons[`${k}-2`].cabinet).change();
-							}
+						} else {
+								$(`#lesson-${k}-2`).val(0).change();
+								$(`#teacher-${k}-2`).val(0).change();
+								$(`#cabinet-${k}-2`).val(0).change();
 						}
 					}
 				}
