@@ -39,7 +39,8 @@ export function save(){
 export function update(){
 	$('#date, #group').on('change', function() {
 		if($('#date').val() != null && $('#group').val() != null){
-			$('.save').prop("disabled",false);
+			$('.save').prop("disabled", false);
+			// $(".save").toggleClass('.save .save-disabled');
 		}
 		console.log($('#date').val());
 		console.log($('#group').val());
@@ -53,7 +54,7 @@ function saveData() {
 	const saveData = {
 		date: $('#date').val(),
 		group: $('#group').val(),
-		lessons : {}
+		lessons: {}
 	};
 
 

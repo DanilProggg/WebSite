@@ -1,7 +1,7 @@
 :root {
   --table-height:35px;
 }
- h2{
+h2{
  	margin: 20px 0;
  	text-align: center;
  }
@@ -64,6 +64,13 @@
 	border: 2px solid #0091ff;
 	border-radius: 4px;
 	float: right;
+}
+
+.canvas-block-form-button:hover{
+	cursor: pointer;
+	background-color: #009fdf;
+	color: white;
+	transition: .1s;
 }
 
 .cabinet_box{

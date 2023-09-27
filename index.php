@@ -48,7 +48,7 @@
 				<div class="timetable-row-unit">15:40 - 17:10</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">3 пара</div>
+				<div class="timetable-row-unit">6 пара</div>
 				<div class="timetable-row-unit">17:50 - 19:20</div>
 				<div class="timetable-row-unit"></div>
 			</div>

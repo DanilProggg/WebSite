@@ -87,7 +87,7 @@
 	height: 60px;
 }
 #table_list-names{
-	background-color: #6767674a !important;
+	background-color: #cbd3de !important;
 	font-weight: 500;
 	font-size: 28px;
 }
@@ -125,11 +125,15 @@
 	font-weight: 500px;
 }
 .save{
-	width: 120px;
+	width: 200px;
 	border-color: var(--main-color);
+	background: #efefef4d;
 }
+
 
 .canvas-under_menu-button:hover{
 	cursor: pointer;
-	transform: scale(1.1);
+	background-color: var(--main-color);
+	color: white;
+	transition: .1s;
 }

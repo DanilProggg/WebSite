@@ -385,7 +385,7 @@
 					<!-- -- -->
 				</table>
 			<div class="canvas-under_menu">
-				<button class="canvas-under_menu-button save" disabled="disabled">Сохранить</button>
+				<button class="canvas-under_menu-button save" disabled="true">Сохранить</button>
 				
 			</div>
 		</div>

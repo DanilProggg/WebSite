@@ -50,15 +50,14 @@ a{
 
 	margin-right: 10px;
 	width: 100px;
-	height: 100%;
+	height: calc(100% - 1px);
+	margin-top: 1px;
 }
 
 .header__container-exit:hover{
-	background: #DCDCDC;
+	background: #cbd3de;
 	cursor: pointer;
 }
-
-
 
 
 
@@ -78,13 +77,14 @@ a{
 	justify-content: center;
 	align-items: center;
 	display: flex;
-	width: 70%;
-	height: 25px;
+	width: 75%;
+	height: 30px;
 	background: #fff;
 	border-radius: 5px;
 }
 .menu-navbutton:hover{
-	transform: scale(1.1);
+	background: rgba(60, 60, 60, 0.29);
+	color: white;
 }
 
 
