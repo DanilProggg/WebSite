@@ -42,7 +42,7 @@
 				<div class="canvas-up_menu-group">
 					<select id="group"><option value="0" selected disabled>Выберите группу</option>
 						<?php 
-							$result = mysqli_query($db, "SELECT * FROM группы");
+							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 							while ($row = mysqli_fetch_array($result)){
 								echo "<option value=".$row["id_группы"] .">".$row["группа"]."</option>";
 							}
@@ -57,7 +57,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-1-2"></td>
 						<td><select id="lesson-1" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -65,7 +65,7 @@
 						</select></td>
 						<td><select id="teacher-1" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -73,7 +73,7 @@
 						</select></td>
 						<td><select id="cabinet-1" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -84,7 +84,7 @@
 					<tr class="under_table" id="table_list-1-2"><td>1/2</td><td></td>
 						<td><select id="lesson-1-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -92,7 +92,7 @@
 						</select></td>
 						<td><select id="teacher-1-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -100,7 +100,7 @@
 						</select></td>
 						<td><select id="cabinet-1-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -112,7 +112,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-2-2"></td>
 						<td><select id="lesson-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -120,7 +120,7 @@
 						</select></td>
 						<td><select id="teacher-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -128,7 +128,7 @@
 						</select></td>
 						<td><select id="cabinet-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -139,7 +139,7 @@
 					<tr class="under_table" id="table_list-2-2"><td>2/2</td><td></td>
 						<td><select id="lesson-2-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -147,7 +147,7 @@
 						</select></td>
 						<td><select id="teacher-2-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -155,7 +155,7 @@
 						</select></td>
 						<td><select id="cabinet-2-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -167,7 +167,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-3-2"></td>
 						<td><select id="lesson-3" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -175,7 +175,7 @@
 						</select></td>
 						<td><select id="teacher-3" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -183,7 +183,7 @@
 						</select></td>
 						<td><select id="cabinet-3" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -194,7 +194,7 @@
 					<tr class="under_table"  id="table_list-3-2"><td>3/2</td><td></td>
 						<td><select id="lesson-3-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -202,7 +202,7 @@
 						</select></td>
 						<td><select id="teacher-3-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -210,7 +210,7 @@
 						</select></td>
 						<td><select id="cabinet-3-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -222,7 +222,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-4-2"></td>
 						<td><select id="lesson-4" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -230,7 +230,7 @@
 						</select></td>
 						<td><select id="teacher-4" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -238,7 +238,7 @@
 						</select></td>
 						<td><select id="cabinet-4" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -249,7 +249,7 @@
 					<tr class="under_table"  id="table_list-4-2"><td>4/2</td><td></td>
 						<td><select id="lesson-4-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -257,7 +257,7 @@
 						</select></td>
 						<td><select id="teacher-4-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -265,7 +265,7 @@
 						</select></td>
 						<td><select id="cabinet-4-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -277,7 +277,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-5-2"></td>
 						<td><select id="lesson-5" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -285,7 +285,7 @@
 						</select></td>
 						<td><select id="teacher-5" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -293,7 +293,7 @@
 						</select></td>
 						<td><select id="cabinet-5" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -304,15 +304,15 @@
 					<tr class="under_table"  id="table_list-5-2"><td>5/2</td><td></td>
 						<td><select id="lesson-5-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
-								while ($row = mysqli_fetch_array($result)){
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
+								while ($row = mysqli_fetch_array($result)){ 
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
 							?>
 						</select></td>
 						<td><select id="teacher-5-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -320,7 +320,7 @@
 						</select></td>
 						<td><select id="cabinet-5-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -332,7 +332,7 @@
 						<td class="s_group"><input class="chk_box" type="checkbox" id="chk_table_list-6-2"></td>
 						<td><select id="lesson-6" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -340,7 +340,7 @@
 						</select></td>
 						<td><select id="teacher-6" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -348,7 +348,7 @@
 						</select></td>
 						<td><select id="cabinet-6" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}
@@ -359,7 +359,7 @@
 					<tr class="under_table"  id="table_list-6-2"><td>6/2</td><td></td>
 						<td><select id="lesson-6-2" class="lesson"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM дисциплины");
+								$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_дисциплины"] .">".$row["название"]."</option>";
 								}
@@ -367,7 +367,7 @@
 						</select></td>
 						<td><select id="teacher-6-2" class="teacher"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM преподаватели");
+								$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_преподавателя"] .">".$row["фамилия"] ." ". $row["имя"]." ".$row["отчество"]."</option>";
 								}
@@ -375,7 +375,7 @@
 						</select></td>
 						<td><select id="cabinet-6-2" class="cabinet"><option value="0">-----------</option>
 							<?php 
-								$result = mysqli_query($db, "SELECT * FROM аудитории");
+								$result = mysqli_query($db, "SELECT * FROM аудитории ORDER BY номер ASC");
 								while ($row = mysqli_fetch_array($result)){
 									echo "<option value=".$row["id_аудитории"] .">".$row["номер"]."</option>";
 								}

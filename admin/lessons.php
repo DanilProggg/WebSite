@@ -33,7 +33,7 @@
 					<h2>Дисциплины</h2>
 					<table class="canvas-block-units-table">
 						<?php 
-							$result = mysqli_query($db, "SELECT * FROM дисциплины");
+							$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 							while ($row = mysqli_fetch_array($result)){
 								echo "<tr id='lesson-".$row['id_дисциплины']."'><td>" ."<div class='canvas-block-units-unit'>".$row['название']."</div>". "</td><td><img id='".$row['id_дисциплины']."' alt='Удалить' class='canvas-block-units-img del_lesson' src='img/del.png'></td></tr>";
 							}

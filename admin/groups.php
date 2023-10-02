@@ -33,7 +33,7 @@
 					<h2>Группы</h2>
 					<table class="canvas-block-units-table">
 						<?php 
-							$result = mysqli_query($db, "SELECT * FROM группы");
+							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 							while ($row = mysqli_fetch_array($result)){
 								echo "<tr id='group-".$row['id_группы']."'><td>" ."<div class='canvas-block-units-unit'>".$row['группа']."</div>". "</td><td><img id='".$row['id_группы']."' alt='Удалить' class='canvas-block-units-img del_group' src='img/del.png'></td></tr>";
 							}

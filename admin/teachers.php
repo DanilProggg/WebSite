@@ -34,7 +34,7 @@
 					<h2>Преподаватели</h2>
 					<table class="canvas-block-units-table">
 						<?php 
-							$result = mysqli_query($db, "SELECT * FROM преподаватели");
+							$result = mysqli_query($db, "SELECT * FROM преподаватели ORDER BY фамилия ASC");
 							while ($row = mysqli_fetch_array($result)){
 								echo "<tr id='teacher-".$row['id_преподавателя']."'><td>" ."<div class='canvas-block-units-unit'>".$row['фамилия']." ".$row['имя']." ".$row['отчество']."</div>". "</td><td><img id='".$row['id_преподавателя']."' alt='Удалить' class='canvas-block-units-img del_teacher' src='img/del.png'></td></tr>";
 							}
