@@ -175,7 +175,7 @@
 						} 
 					}
 				} else {
-					echo "<div class=\"not_found\">Пары отсутсвуют</div>";
+					echo "<div class=\"not_found\">Занятий нет</div>";
 				}
 				
 				
@@ -311,7 +311,7 @@
 						} 
 					}
 				} else {
-					echo "<div class=\"not_found\">Пары отсутсвуют</div>";
+					echo "<div class=\"not_found\">Занятий нет</div>";
 				}
 				
 				
@@ -447,7 +447,7 @@
 						} 
 					}
 				} else {
-					echo "<div class=\"not_found\">Пары отсутсвуют</div>";
+					echo "<div class=\"not_found\">Занятий нет</div>";
 				}
 				
 				

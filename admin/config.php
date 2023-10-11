@@ -1,6 +1,6 @@
 <?php
 
-$login = "root";
-$password = "root";
+$login = "admin";
+$password = "vsopwl";
 
 ?>
