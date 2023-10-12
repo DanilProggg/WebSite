@@ -9,16 +9,27 @@ $data = json_decode(file_get_contents("php://input"), true);
 
 
 $action = $data['action'];
-$object = $data['object'];
+$subject = $data['object'];
+$hours = $data['hours'];
 
 
 if($action == 'DELETE'){
 	$query = sprintf("DELETE FROM `дисциплины` WHERE `дисциплины`.`id_дисциплины` = '%s'",
-		mysqli_real_escape_string($db,$object));
+		mysqli_real_escape_string($db,$subject));
 }
 if($action == 'ADD'){
-	$query = sprintf("INSERT INTO `дисциплины`(`название`) VALUES ('%s')",
-		mysqli_real_escape_string($db,$object));
+	if ($hours == null) {
+		$hours = 0;
+	}
+	$query = sprintf("INSERT INTO `дисциплины`(`название`,`часы`) VALUES ('%s','%s')",
+		mysqli_real_escape_string($db,$subject),
+		mysqli_real_escape_string($db,$hours));
+}
+
+if($action == 'UPDATE'){
+	$query = sprintf("UPDATE дисциплины SET `часы`='%s' WHERE `дисциплины`.`id_дисциплины` = '%s'",
+		mysqli_real_escape_string($db,$hours),
+		mysqli_real_escape_string($db,$subject));
 }
 
 

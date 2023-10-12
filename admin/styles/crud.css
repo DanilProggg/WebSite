@@ -11,29 +11,61 @@ h2{
 	margin-bottom: 20px;
 	flex-wrap: wrap-reverse;
 }
-.canvas-block-units-table{
-	font-size: 18px;
-	width: 400px;
+
+.canvas-block-units-lessons_title{
+	display:grid;
+	grid-template-columns: 1fr 6fr;
+}
+
+.canvas-block-units{
+	font-size: 20px;
+	min-width: 400px;
 
 	border-collapse: collapse
 }
 .canvas-block-units-table tr{
 	
 
-	border-bottom-style: solid;
-	border-bottom-color: black;
+
 	height:var(--table-height);
 
 }
 .canvas-block-units-unit{
-
 	padding-left: 10px;
-
 }
+
+.canvas-block-units-lesson_grid{
+	display:grid;
+	grid-template-columns:1fr 5fr 1fr;
+
+	padding: 10px 0;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	font-size:20px;
+}
+
+.canvas-block-units-grid{
+	display:grid;
+	grid-template-columns:6fr 1fr;
+
+	padding: 10px 0;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+
+	font-size:20px;
+}
+
+.canvas-block-units-hours{
+	text-align:center;
+	width:60px;
+	font-size:20px;
+}
+
 .canvas-block-units-img{
-	padding-right: 10px;
+	position:relative;
+	left:50%;
 	float: right;
-	height: calc(var(--table-height)*2/3);
+	height: 27px;
 
 }
 .canvas-block-units-img:hover{
@@ -73,6 +105,3 @@ h2{
 	transition: .1s;
 }
 
-.cabinet_box{
-	width: 20%;
-}

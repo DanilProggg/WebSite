@@ -72,7 +72,7 @@
 
 				$group = urldecode($_GET['group']);
 
-				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'",
+				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `id_группы`='%s'",
 					mysqli_real_escape_string($db,$today),
 					mysqli_real_escape_string($db,$group)));
 				$row = mysqli_fetch_array($result);
@@ -205,7 +205,7 @@
 
 				$group = urldecode($_GET['group']);
 
-				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'",
+				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `id_группы`='%s'",
 					mysqli_real_escape_string($db,date("Y-m-d",$tom)),
 					mysqli_real_escape_string($db,$group)));
 				$row = mysqli_fetch_array($result);
@@ -341,7 +341,7 @@
 
 				$group = urldecode($_GET['group']);
 
-				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `группа`='%s'",
+				$result = mysqli_query($db, sprintf("SELECT `дисциплины` FROM `расписание` WHERE `дата`='%s' AND `id_группы`='%s'",
 					mysqli_real_escape_string($db,date("Y-m-d",$aftertom)),
 					mysqli_real_escape_string($db,$group)));
 				$row = mysqli_fetch_array($result);

@@ -8,6 +8,7 @@ body{
 	background: var(--main-color);
 	height: 100%;
 	margin: 0;
+
 }
 header{
 	display: flex;
@@ -20,10 +21,17 @@ main{
 	margin-top: 20px;
 	display: flex;
 	min-height: calc(100% - 60px - 20px);
+	min-width:80vh;
 }
 a{
 	text-decoration: none;
 }
+
+select{
+	width:100%;
+}
+
+
 
 
 

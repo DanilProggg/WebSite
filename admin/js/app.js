@@ -11,18 +11,10 @@ import {cabinet} from './modules/cabinets.js';
 
 
 $(document).ready(function() {
-	select2_main();
-	$(window).resize(function () {
-		select2_main();
-	});
-
-	$.ajax({  //Ajax запрос - запрашивает все дисиплины для дальнейшего их использования
-		url: 'php_querys/db_cleaner.php',
-		method: 'get',
-		success: function () {
-		console.log("Data have been cleaned");
-		}
-	});
+	$("#group").select2();
+	$(".lesson").select2();
+	$('.teacher').select2();
+	$('.cabinet').select2();
 
 	//Удаление куков и тем самым выход из админки
 	$(".header__container-exit").click(function(){
@@ -40,7 +32,7 @@ $(document).ready(function() {
 	cabinet();
 	
 
-	s_group(); //Переключает 2 подгруппу
+	s_group(); //2 подгруппа
 
 });
 

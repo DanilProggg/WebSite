@@ -35,7 +35,10 @@
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 							while ($row = mysqli_fetch_array($result)){
-								echo "<tr id='group-".$row['id_группы']."'><td>" ."<div class='canvas-block-units-unit'>".$row['группа']."</div>". "</td><td><img id='".$row['id_группы']."' alt='Удалить' class='canvas-block-units-img del_group' src='img/del.png'></td></tr>";
+								echo "<div class='canvas-block-units-grid' id='group-".$row['id_группы']."'>" .
+									 	"<div class='canvas-block-units-unit'>".$row['группа']."</div>". "
+									 	<img id='".$row['id_группы']."' alt='Удалить' class='canvas-block-units-img del_group' src='img/del.png'>
+									  </div>";
 							}
 						?>
 					</table>

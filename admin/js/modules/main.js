@@ -2,33 +2,11 @@ import $ from 'jquery';
 import jQuery from 'jquery';
 
 
-export function select2_main(){
-	if($(window).width() < 1390){
-		$("#group").select2();
-	$(".lesson").select2({
-		width:250
-	});
-	$('.teacher').select2({
-		width:250
-	});
-	$('.cabinet').select2({
-		width:150
-	});
-} else{
-		$("#group").select2();
-	$(".lesson").select2({
-		width:450
-	});
-	$('.teacher').select2({
-		width:450
-	});
-	$('.cabinet').select2({
-		width:150
-	});
-}
+
+
 	
 
-}
+
 
 export function save(){
 	$('.save').click(function(){

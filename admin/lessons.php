@@ -30,19 +30,28 @@
 		<div class="canvas">
 			<div class="canvas-block">
 				<div class="canvas-block-units">
-					<h2>Дисциплины</h2>
+					<div class="canvas-block-units-lessons_title">
+						<h2>Часы</h2>
+						<h2>Дисциплины</h2>
+					</div>
+					
 					<table class="canvas-block-units-table">
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
 							while ($row = mysqli_fetch_array($result)){
-								echo "<tr id='lesson-".$row['id_дисциплины']."'><td>" ."<div class='canvas-block-units-unit'>".$row['название']."</div>". "</td><td><img id='".$row['id_дисциплины']."' alt='Удалить' class='canvas-block-units-img del_lesson' src='img/del.png'></td></tr>";
+								echo "<div class='canvas-block-units-lesson_grid' id='".$row['id_дисциплины']."'>" .
+										"<input class='canvas-block-units-hours' value='".$row['часы']."'>".
+										"<div class='canvas-block-units-unit'>".$row['название']."</div>". 
+										"<img alt='Удалить' class='canvas-block-units-img del_lesson' src='img/del.png'>
+									</div>";
 							}
 						?>
 					</table>
 				</div>
 				<div class="canvas-block-form">
 					<h2>Добавить дисциплину</h2>
-					<input class="canvas-block-form-input" placeholder="Назавние дисциплины">
+					<input class="canvas-block-form-input name" placeholder="Назавние дисциплины">
+					<input class="canvas-block-form-input hours" placeholder="Количество часов">
 					<button id="add_lesson" class="canvas-block-form-button">Сохранить</button>
 				</div>
 			</div>

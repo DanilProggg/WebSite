@@ -36,7 +36,10 @@
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM аудитории");
 							while ($row = mysqli_fetch_array($result)){
-								echo "<tr id='cabinet-".$row['id_аудитории']."'><td>" ."<div class='canvas-block-units-unit'>".$row['номер']."</div>". "</td><td><img id='".$row['id_аудитории']."' alt='Удалить' class='canvas-block-units-img del_cabinet' src='img/del.png'></td></tr>";
+								echo "<div class='canvas-block-units-grid' id='cabinet-".$row['id_аудитории']."'>" .
+										"<div class='canvas-block-units-unit'>".$row['номер']."</div>". 
+										"<img id='".$row['id_аудитории']."' alt='Удалить' class='canvas-block-units-img del_cabinet' src='img/del.png'>
+									  </div>";
 							}
 						?>
 					</table>

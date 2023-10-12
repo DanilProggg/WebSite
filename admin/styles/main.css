@@ -1,3 +1,20 @@
+td{
+	padding:0 20px;
+}
+
+.lesson_box{
+	width: 45%;
+}
+
+.teacher_box{
+	width:45%;
+}
+
+.cabinet_box{
+	width:10%;
+}
+
+
 .error_window{
 	text-align: center;
 	display: flex;
