@@ -1,0 +1,50 @@
+h3{
+	text-align: center;
+}
+
+.canvas-stats_group_list{
+	display:grid;
+	grid-template-columns:10fr 1fr 1fr;
+}
+
+.canvas-stats_group_list-unit{
+	
+}
+
+.canvas-nav_stats{
+	display:flex;
+	justify-content: space-around;
+}
+
+.canvas-nav_stats-unit{
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.canvas-nav_stats-unit-s{
+	font-weight: bold;
+}
+
+.canvas-statsadd{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.exist-groups,.linked-groups{
+	flex-grow: 1;
+}
+
+.exist-groups-unit,.linked-groups-unit{
+	margin-bottom: 10px;
+	font-size:24px;
+	display: grid;
+	grid-template-columns:10fr 1fr;
+}
+
+.exist-groups-unit img{
+	height: 100%;
+}
+
+.exist-groups-unit img:hover{
+	cursor: pointer;
+}

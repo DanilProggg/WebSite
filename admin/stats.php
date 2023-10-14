@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">
 	<link rel="stylesheet" type="text/css" href="styles/crud.css">
+	<link rel="stylesheet" type="text/css" href="styles/stats.css">
 	<link rel="stylesheet" type="text/css" href="styles/adaptive.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,7 @@
 	<?php include("db.php") ?>
 	<header>
 		<div class="header-logo">
-			РАСПИСАНИЕ
+			СТАТИСТИКА
 		</div>
 		<?php include("components/header.html") ?>
 	</header>
@@ -28,27 +29,20 @@
 			<?php include("components/nav.html")?>
 		</nav>
 		<div class="canvas">
-			<div class="canvas-block">
-				<div class="canvas-block-units">						
-					<h2>Дисциплины</h2>
-					
-					<div class="canvas-block-units-table">
-						<?php 
-							$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
-							while ($row = mysqli_fetch_array($result)){
-								echo "<div class='canvas-block-units-grid' id='".$row['id_дисциплины']."'>" .
-										"<div class='canvas-block-units-unit'>".$row['название']."</div>". 
-										"<img alt='Удалить' class='canvas-block-units-img del_lesson' src='img/del.png'>
-									</div>";
-							}
-						?>
-					</div>
-				</div>
-				<div class="canvas-block-form">
-					<h2>Добавить дисциплину</h2>
-					<input class="canvas-block-form-input name" placeholder="Назавние дисциплины">
-					<button id="add_lesson" class="canvas-block-form-button">Сохранить</button>
-				</div>
+			<div class="canvas-nav_stats">
+				<a href="stats.php" class="canvas-nav_stats-unit canvas-nav_stats-unit-s">Статистика</a><a href="statsadd.php" class="canvas-nav_stats-unit">Добавить дисциплину</a>
+			</div>
+			<h2>Группа</h2>
+			<select class="group" id="stats-group">
+				<?php 
+					$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
+						while ($row = mysqli_fetch_array($result)){
+							echo "<option value=".$row["id_группы"] .">".$row["группа"]."</option>";
+						}
+				?>
+			</select>
+			<div class="canvas-stats_group_list">
+				
 			</div>
 		</div>
 	</main>

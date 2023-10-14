@@ -1,6 +1,9 @@
 :root{
 	--main-color:#009fdf;
 }
+html{
+	min-width:1280px;
+}
 body{
 	font-family: 'Open Sans', sans-serif;
 

@@ -8,10 +8,11 @@ import {group} from './modules/groups.js';
 import {lesson} from './modules/lessons.js';
 import {teacher} from './modules/teachers.js';
 import {cabinet} from './modules/cabinets.js';
+import {stats} from './modules/stats.js';
 
 
 $(document).ready(function() {
-	$("#group").select2();
+	$("#group,.group").select2();
 	$(".lesson").select2();
 	$('.teacher').select2();
 	$('.cabinet').select2();
@@ -30,6 +31,7 @@ $(document).ready(function() {
 	lesson();
 	teacher();
 	cabinet();
+	stats();
 	
 
 	s_group(); //2 подгруппа

@@ -31,7 +31,7 @@
 			<div class="canvas-block">
 				<div class="canvas-block-units">
 					<h2>Группы</h2>
-					<table class="canvas-block-units-table">
+					<div class="canvas-block-units-table">
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 							while ($row = mysqli_fetch_array($result)){
@@ -41,7 +41,7 @@
 									  </div>";
 							}
 						?>
-					</table>
+					</div>
 				</div>
 				<div class="canvas-block-form">
 					<h2>Добавить группу</h2>

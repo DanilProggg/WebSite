@@ -4,10 +4,6 @@ import jQuery from 'jquery';
 
 
 
-	
-
-
-
 export function save(){
 	$('.save').click(function(){
 	saveData();
@@ -18,6 +14,10 @@ export function update(){
 	$('#date, #group').on('change', function() {
 		if($('#date').val() != null && $('#group').val() != null){
 			$('.save').prop("disabled", false);
+			$('.lesson').prop("disabled", false);
+			$('.teacher').prop("disabled", false);
+			$('.cabinet').prop("disabled", false);
+			$('.chk_box').prop("disabled", false);
 			// $(".save").toggleClass('.save .save-disabled');
 		}
 		console.log($('#date').val());

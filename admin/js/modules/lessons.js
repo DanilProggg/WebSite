@@ -17,15 +17,6 @@ export function lesson() {
 		add_lesson();
 
 	});
-
-	$('.canvas-block-units-hours').keyup(function(event) {
-		if (event.keyCode === 13) {
-			var clickId = $(this).parent().attr('id');
-			$(this).blur();
-	    	update_lesson(clickId);
-	    }
-	    
-	});
 }
 
 function delete_lesson(id) {
@@ -51,11 +42,9 @@ function add_lesson() {
 
 	let data_to_add = {
 	action:'ADD',
-	object: $('.name').val(),
-	hours: $('.hours').val()
+	object: $('.name').val()
 	}
 
-	
 
 		//query to create lesson
 	$.ajax({
@@ -71,24 +60,4 @@ function add_lesson() {
 	$(document).ajaxStop(function(){
 	    window.location.reload();
 	});	
-}
-
-function update_lesson(id) {
-	let data_to_add = {
-	action:'UPDATE',
-	object: id,
-	hours: $(`#${id}`).children('.canvas-block-units-hours').val()
-	}
-
-		//создавать элемент при создании в таблице
-	$.ajax({
-			url: 'php_querys/lessons_query.php',
-			method: 'post',
-			dataType: 'json',
-			contentType: 'application/json',
-			data: JSON.stringify(data_to_add),
-			success:function(){
-				console.log(data_to_add);
-			}
-		});
 }
