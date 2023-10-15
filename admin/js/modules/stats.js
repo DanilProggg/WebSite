@@ -27,12 +27,11 @@ function statsaddUpdate(groupId){
 	});
 }
 
-function statsaddAdd(groupId){
-	console.log(groupId);
+function statsaddAdd(lessonId){
 	const saveData = {
 		action:'ADD',
-		id: groupId,
-		name: $(`#${groupId}`).children('.exist-groups-unit-name').text()
+		id: $('#statsadd-group').val(),
+		name: lessonId
 	};
 	$.ajax({
 		url: 'php_querys/statsadd_query.php',
@@ -40,8 +39,8 @@ function statsaddAdd(groupId){
 		dataType: 'json',
 		contentType: 'application/json',
 		data: JSON.stringify(saveData),
-		success:function(saveData){
-			console.log(saveData);
+		success:function(){
+			console.log();
 
 		}
 	});
