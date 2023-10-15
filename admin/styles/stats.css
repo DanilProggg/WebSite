@@ -48,3 +48,8 @@ h3{
 .exist-groups-unit img:hover{
 	cursor: pointer;
 }
+
+.exist-groups-unit-name img{
+	height: 100%;
+	padding: 5px 0;
+}

@@ -13,13 +13,17 @@ $result = mysqli_query($db, sprintf("SELECT название, id_статист�
 	  			  INNER JOIN дисциплины ON статистика.id_дисциплины = дисциплины.id_дисциплины
 				  WHERE `статистика`.`id_группы` = '%s'",
 	mysqli_real_escape_string($db,$group_id)));
+
+$lessons = array();
 while ($row = mysqli_fetch_array($result)){
-	$lessons = array(
+	$temp = array(
 		'id'=> $row['id_статистики'],
 		'name' => $row['название']
 	);
-	echo json_encode($lessons,JSON_UNESCAPED_UNICODE);
+	array_push($lessons, $temp);
 }
+
+echo json_encode($lessons,JSON_UNESCAPED_UNICODE);
 
 
 
