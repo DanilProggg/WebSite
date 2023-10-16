@@ -42,19 +42,7 @@
 				?>
 			</select>
 			<div class="canvas-statsadd">
-				<div class="exist-groups">
-					<h3>Все группы</h3>
-					<?php 
-					$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
-						while ($row = mysqli_fetch_array($result)){
-							echo "<div class='exist-groups-unit' id=".$row["id_дисциплины"] .">".
-							"<div class='exist-groups-unit-name'>".$row["название"]."</div>".
-							"<img src='img/arrow-right.svg'>".
-
-							"</div>";
-						}
-					?>
-				</div>
+				
 				<div class="linked-groups">
 					<h3>Привязаные группы</h3>
 				</div>

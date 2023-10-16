@@ -112,9 +112,15 @@ td{
 	max-width:40px;
 	font-size: 16px;
 }
+
+.under_group{
+	display: table-row !important;
+}
+
 .under_table{
 	display: none;
 }
+
 
 .chk_box{
 	width: 15px;

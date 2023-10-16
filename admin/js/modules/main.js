@@ -20,8 +20,6 @@ export function update(){
 			$('.chk_box').prop("disabled", false);
 			// $(".save").toggleClass('.save .save-disabled');
 		}
-		console.log($('#date').val());
-		console.log($('#group').val());
 		updateData();
 	});
 }
@@ -192,7 +190,6 @@ function updateData() {
 						}
 					}
 				}
-				console.log(data);
 			}
 			if(data['status'] == 'EMPTY') {
 				for(var k = 1; k <= 6; k++ ){

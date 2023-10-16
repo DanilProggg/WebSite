@@ -5,7 +5,6 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="styles/s_group.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">

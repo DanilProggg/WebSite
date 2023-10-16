@@ -15,14 +15,11 @@ if($action == 'DELETE'){
 		mysqli_real_escape_string($db,$object));
 }
 if($action == 'ADD'){
-	$query = sprintf("INSERT INTO `группы`(`id_группы`) VALUES ('%s')",
+	$query = sprintf("INSERT INTO `группы`(`группа`) VALUES ('%s')",
 		mysqli_real_escape_string($db,$object));
 }
 
 
 
 mysqli_query($db, $query);
-
-
-
 mysqli_close($db);

@@ -1,3 +1,4 @@
+/*Вкладка группы----------------------*/
 h3{
 	text-align: center;
 }
@@ -32,24 +33,31 @@ h3{
 
 .exist-groups,.linked-groups{
 	flex-grow: 1;
+	padding:0 20px;
 }
 
 .exist-groups-unit,.linked-groups-unit{
-	margin-bottom: 10px;
-	font-size:24px;
+	padding: 10px 0;
+	font-size:20px;
 	display: grid;
-	grid-template-columns:10fr 1fr;
+	grid-template-columns:3fr 1fr;
 }
 
-.exist-groups-unit img{
-	height: 100%;
+
+
+
+
+.link_button,.delete_link_button{
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	font-size:0.9em;
 }
 
-.exist-groups-unit img:hover{
-	cursor: pointer;
+.link_button,.delete_link_button:hover{
+	cursor:pointer;
+	font-weight:500;
+	transition: .3s;
 }
 
-.exist-groups-unit-name img{
-	height: 100%;
-	padding: 5px 0;
-}
+/*----------------------*/

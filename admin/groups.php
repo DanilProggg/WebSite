@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-
+	<link rel="stylesheet" type="text/css" href="styles/stats.css">
 	<link rel="stylesheet" type="text/css" href="styles/crud.css">
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<link rel="stylesheet" type="text/css" href="styles/select2_override.css">
@@ -47,6 +47,37 @@
 					<h2>Добавить группу</h2>
 					<input class="canvas-block-form-input" placeholder="Назание группы">
 					<button id="add_group" class="canvas-block-form-button">Сохранить</button>
+				</div>
+			</div>
+
+			<!--  Часть с конфигурированием групп-->
+			
+			<div class="canvas-block canvas-stats_block">
+				<select class="group" id="statsadd-group"><option value="0" selected disabled>Выберите группу</option>
+						<?php 
+							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
+							while ($row = mysqli_fetch_array($result)){
+								echo "<option value=".$row["id_группы"] .">".$row["группа"]."</option>";
+							}
+						?>
+				</select>
+				<div class="canvas-statsadd">
+					<div class="exist-groups">
+						<h3>Все дисциплины</h3>
+						<?php 
+						$result = mysqli_query($db, "SELECT * FROM дисциплины ORDER BY название ASC");
+							while ($row = mysqli_fetch_array($result)){
+								echo "<div class='exist-groups-unit' id=exist-".$row["id_дисциплины"] .">".
+								"<div class='exist-groups-unit-name'>".$row["название"]."</div>".
+								"<div class='link_button'>Добавить</div>".
+
+								"</div>";
+							}
+						?>
+					</div>
+					<div class="linked-groups">
+						<h3>Дициплины группы для изучения</h3>
+					</div>
 				</div>
 			</div>
 		</div>

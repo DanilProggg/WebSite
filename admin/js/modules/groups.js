@@ -34,13 +34,16 @@ function delete_group(id) {
 				console.log('Data deleted');
 			}
 		});
+	$(document).ajaxStop(function(){
+	    window.location.reload();
+	});
 }
 
 function add_group() {
 	let data_to_add = {
 		action:'ADD',
 		object: $('.canvas-block-form-input').val()
-	}	
+	}
 
 		//создавать элемент при создании в таблице
 	$.ajax({
