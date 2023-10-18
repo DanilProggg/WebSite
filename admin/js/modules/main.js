@@ -160,7 +160,7 @@ function updateData() {
 						try{
 							if(data.lessons[k].s_group_check_box == true || data.lessons[k+"-2"].s_group_check_box == true){
 								$(`#chk_table_list-${k}-2`).prop('checked', true);
-								$(`#table_list-${k}-2`).css("display","table-row");
+								$(`#table_list-${k}-2`).css("display","grid");
 							}
 						} catch(e){
 							console.log("Exeption:"+e);
@@ -178,7 +178,7 @@ function updateData() {
 						if(Object.hasOwn(data.lessons,`${k}-2`) == true){
 								
 								$(`#chk_table_list-${k}-2`).prop('checked', true);
-								$(`#table_list-${k}-2`).css("display","table-row");
+								$(`#table_list-${k}-2`).css("display","grid");
 								
 								$(`#lesson-${k}-2`).val(data.lessons[`${k}-2`].lesson).change();
 								$(`#teacher-${k}-2`).val(data.lessons[`${k}-2`].teacher).change();
@@ -216,7 +216,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-1-2').css("display","table-row");
+	       $('#table_list-1-2').css("display","grid");
 	    } else {
 	    	$('#table_list-1-2').css("display","none");
 	    	$(`#lesson-1-2`).val(0).change();
@@ -228,7 +228,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-2-2').css("display","table-row");
+	       $('#table_list-2-2').css("display","grid");
 	    } else {
 	    	$('#table_list-2-2').css("display","none");
 	    	$(`#lesson-2-2`).val(0).change();
@@ -240,7 +240,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-3-2').css("display","table-row");
+	       $('#table_list-3-2').css("display","grid");
 	    } else {
 	    	$('#table_list-3-2').css("display","none");
 	    	$(`#lesson-3-2`).val(0).change();
@@ -252,7 +252,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-4-2').css("display","table-row");
+	       $('#table_list-4-2').css("display","grid");
 	    } else {
 	    	$('#table_list-4-2').css("display","none");
 	    	$(`#lesson-4-2`).val(0).change();
@@ -264,7 +264,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-5-2').css("display","table-row");
+	       $('#table_list-5-2').css("display","grid");
 	    } else {
 	    	$('#table_list-5-2').css("display","none");
 	    	$(`#lesson-5-2`).val(0).change();
@@ -276,7 +276,7 @@ export function s_group(){
     	// this function will get executed every time the #home element is clicked (or tab-spacebar changed)
 	    if($(this).is(":checked")) // "this" refers to the element that fired the event
 	    {
-	       $('#table_list-6-2').css("display","table-row");
+	       $('#table_list-6-2').css("display","grid");
 	    } else {
 	    	$('#table_list-6-2').css("display","none");
 	    	$(`#lesson-6-2`).val(0).change();

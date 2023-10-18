@@ -1,18 +1,5 @@
-td{
-	padding:0 20px;
-}
 
-.lesson_box{
-	width: 45%;
-}
 
-.teacher_box{
-	width:45%;
-}
-
-.cabinet_box{
-	width:10%;
-}
 
 
 .error_window{
@@ -86,35 +73,45 @@ td{
 
 }
 
-.canvas-table{
-
+.teacher,.lesson,.cabinet{
+	height:100%;
 }
-#table_list{
-	border-radius: 4px !important;
+
+.canvas-table{
+	border-collapse: collapse;
+}
+.table_list{
+	display:grid;
+	grid-template-columns:1fr 1fr 5fr 5fr 3fr;
 	text-align: center;
 	font-size: 18px;
-	width: 100%;
-	border-collapse: collapse;
+	height:60px;
+
+	border: solid;
+	border-width: 0.5px;
 	
 }
-#table_list tr{
-	border: solid;
-	border-width: 1px !important;
-	border: solid;
-	height: 60px;
+.table_list > div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding:5px;
 }
 #table_list-names{
 	background-color: #cbd3de !important;
 	font-weight: 500;
 	font-size: 28px;
-}
-.s_group{ /* Second group столбик с чекбоксом*/
-	max-width:40px;
-	font-size: 16px;
+	border-width: 1px !important;
 }
 
-.under_group{
-	display: table-row !important;
+#table_list-names > *{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.s_group{ /* Second group столбик с чекбоксом*/
+	font-size: 16px;
 }
 
 .under_table{

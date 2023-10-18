@@ -12,10 +12,7 @@ import {stats} from './modules/stats.js';
 
 
 $(document).ready(function() {
-	$("#group,.group").select2();
-	$(".lesson").select2();
-	$('.teacher').select2();
-	$('.cabinet').select2();
+	
 
 	//Удаление куков и тем самым выход из админки
 	$(".header__container-exit").click(function(){
@@ -24,10 +21,6 @@ $(document).ready(function() {
    		location.reload();
 	});
 
-
-	$('.delete_link_button').click(function(){
-		alert("sdasjk");
-	});
 
 /* Components */
 	save();
@@ -41,6 +34,12 @@ $(document).ready(function() {
 	
 
 	s_group(); //2 подгруппа
+
+	
+		$("#group,.group").select2();
+		$(".lesson").select2();
+		$('.teacher').select2();
+		$('.cabinet').select2();
 
 });
 

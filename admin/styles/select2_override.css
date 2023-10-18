@@ -25,13 +25,12 @@
 }
 .select2-results__option{
 	box-sizing: border-box !important;
-	height: 35px !important;
 	font-size: 18px !important
 }
 
 .select2{
 	width:100% !important;
 }
-#table_list tbody tr{
+.table_list{
 	background: #f3f3f3;
 }
