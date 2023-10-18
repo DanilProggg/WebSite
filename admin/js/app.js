@@ -24,14 +24,20 @@ $(document).ready(function() {
    		location.reload();
 	});
 
+
+	$('.delete_link_button').click(function(){
+		alert("sdasjk");
+	});
+
 /* Components */
 	save();
+	stats();
 	group();
 	update();
 	lesson();
 	teacher();
 	cabinet();
-	stats();
+	
 	
 
 	s_group(); //2 подгруппа

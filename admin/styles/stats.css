@@ -3,13 +3,37 @@ h3{
 	text-align: center;
 }
 
+
 .canvas-stats_group_list{
-	display:grid;
-	grid-template-columns:10fr 1fr 1fr;
+	padding:20px 0;
 }
 
-.canvas-stats_group_list-unit{
-	
+.canvas-stats_group_list-unit, .canvas-stats_group_list-title{
+
+	display:grid;
+	grid-template-columns:4fr 1.5fr 1fr 1fr;
+	padding:10px;
+	font-size: 18px;
+
+
+}
+
+.canvas-stats_group_list-title > *{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:16px;
+	font-weight: 500;
+}
+
+.planed-hours,.past-hours,.persent{
+	display:flex;
+	justify-content:center;
+	margin:0 auto;
+	font-size:16px;
+	text-align:center;
+	width:50%;
+
 }
 
 .canvas-nav_stats{
@@ -27,12 +51,17 @@ h3{
 }
 
 .canvas-statsadd{
+	margin-top: 10px;
 	display:grid;
 	grid-template-columns: 1fr 1fr;
+	border-collapse:collapse;
+}
+
+.exist-groups{
+	border-right: 1px solid black;
 }
 
 .exist-groups,.linked-groups{
-	flex-grow: 1;
 	padding:0 20px;
 }
 
@@ -54,7 +83,7 @@ h3{
 	font-size:0.9em;
 }
 
-.link_button,.delete_link_button:hover{
+.link_button:hover,.delete_link_button:hover{
 	cursor:pointer;
 	font-weight:500;
 	transition: .3s;

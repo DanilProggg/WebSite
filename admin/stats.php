@@ -29,11 +29,8 @@
 			<?php include("components/nav.html")?>
 		</nav>
 		<div class="canvas">
-			<div class="canvas-nav_stats">
-				<a href="stats.php" class="canvas-nav_stats-unit canvas-nav_stats-unit-s">Статистика</a><a href="statsadd.php" class="canvas-nav_stats-unit">Добавить дисциплину</a>
-			</div>
-			<h2>Группа</h2>
-			<select class="group" id="stats-group">
+
+			<select class="group" id="stats-group"><option value="0" selected disabled>Выберите группу</option>
 				<?php 
 					$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 						while ($row = mysqli_fetch_array($result)){
@@ -42,7 +39,12 @@
 				?>
 			</select>
 			<div class="canvas-stats_group_list">
-				
+				<div class="canvas-stats_group_list-title">
+					<div>Дисциплина</div>
+					<div>Запланировано, часы</div>
+					<div>Пройдено, часы</div>
+					<div>Пройдено, %</div>
+				</div>	
 			</div>
 		</div>
 	</main>

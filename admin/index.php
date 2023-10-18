@@ -24,7 +24,7 @@
 		<?php include("components/header.html") ?>
 	</header>
 	<div class="error_window">Ошибка в заполнении формы<br>(Проверте выбранали ли группа и дата, приавльно ли заполнена форма)</div>
-	<div class="save_window">Расписание сахранено</div>
+	<div class="save_window">Расписание сохранено</div>
 	<main>
 		<nav class="menu">
 			

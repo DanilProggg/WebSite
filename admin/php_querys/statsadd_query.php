@@ -19,9 +19,16 @@ if($action == 'ADD'){
 
 if($action == 'DELETE'){
 
-	$query = sprintf("DELETE FROM `статистика` WHERE `статистика`.`id_группы` = '%s' AND `статистика`.`id_дисциплины` = '%s'",
+	$query = sprintf("DELETE FROM статистика WHERE id_группы = '%s' AND id_дисциплины = '%s'",
 		mysqli_real_escape_string($db,$id),
 		mysqli_real_escape_string($db,$lessonId));
+}
+
+if($action == 'UPDATE'){
+	$hours = $data['hours'];
+	$query = sprintf("UPDATE статистика SET часы = '%s' WHERE id_статистики = '%s'",
+		mysqli_real_escape_string($db,$hours),
+		mysqli_real_escape_string($db,$id));
 }
 
 
