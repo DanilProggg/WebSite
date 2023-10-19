@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 14 2023 г., 12:00
+-- Время создания: Окт 19 2023 г., 12:00
 -- Версия сервера: 5.7.33
 -- Версия PHP: 7.4.27
 
@@ -45,7 +45,8 @@ INSERT INTO `дисциплины` (`id_дисциплины`, `название
 (16, 'История'),
 (17, 'Литература'),
 (18, 'Биология'),
-(19, 'Химия');
+(19, 'Химия'),
+(21, 'Основы алгоритмицазции и програмирования');
 
 -- --------------------------------------------------------
 
@@ -72,8 +73,7 @@ INSERT INTO `преподаватели` (`id_преподавателя`, `фа
 (14, 'Гончарюк', 'Наталья', 'Владимировна', NULL),
 (16, 'Самулева', 'Лидия', 'Ивановна', NULL),
 (17, 'Болгова ', 'Татьяна', 'Сергеевна', NULL),
-(21, 'Цыгуль', 'Оксана', 'Владимировна', 18),
-(22, 'Цыгуль', 'Оксана', 'Владимировна', 15);
+(21, 'Цыгуль', 'Оксана', 'Владимировна', 18);
 
 -- --------------------------------------------------------
 
@@ -116,8 +116,8 @@ INSERT INTO `группы` (`id_группы`, `группа`) VALUES
 (11, 'П-23-3'),
 (12, 'П-23-4'),
 (13, 'П-23-5'),
-(14, 'П-23-6'),
-(15, 'П-23-7');
+(16, 'П-23-6'),
+(17, 'П-23-7');
 
 -- --------------------------------------------------------
 
@@ -137,8 +137,8 @@ CREATE TABLE `расписание` (
 --
 
 INSERT INTO `расписание` (`id_расписания`, `дата`, `id_группы`, `дисциплины`) VALUES
-(171, '2023-10-11', 9, '{\"1\": {\"lesson\": \"6\", \"cabinet\": \"5\", \"teacher\": \"13\", \"s_group_check_box\": false}, \"2\": {\"lesson\": \"18\", \"cabinet\": \"1\", \"teacher\": \"17\", \"s_group_check_box\": true}, \"3\": {\"lesson\": \"6\", \"cabinet\": \"5\", \"teacher\": \"13\", \"s_group_check_box\": false}, \"4\": {\"lesson\": \"14\", \"cabinet\": \"1\", \"teacher\": \"12\", \"s_group_check_box\": true}, \"2-2\": {\"lesson\": \"2\", \"cabinet\": \"5\", \"teacher\": \"16\", \"s_group_check_box\": true}, \"4-2\": {\"lesson\": \"1\", \"cabinet\": \"9\", \"teacher\": \"11\", \"s_group_check_box\": true}}'),
-(172, '2023-10-12', 10, '{\"1\": {\"lesson\": \"18\", \"cabinet\": \"5\", \"teacher\": \"17\", \"s_group_check_box\": false}, \"2\": {\"lesson\": \"2\", \"cabinet\": \"9\", \"teacher\": \"17\", \"s_group_check_box\": true}, \"2-2\": {\"lesson\": \"18\", \"cabinet\": \"5\", \"teacher\": \"12\", \"s_group_check_box\": true}}');
+(177, '2023-10-18', 9, '{\"1\": {\"lesson\": \"6\", \"cabinet\": \"9\", \"teacher\": \"13\", \"s_group_check_box\": false}, \"2\": {\"lesson\": \"6\", \"cabinet\": \"5\", \"teacher\": \"14\", \"s_group_check_box\": false}, \"3\": {\"lesson\": \"6\", \"cabinet\": \"5\", \"teacher\": \"11\", \"s_group_check_box\": false}}'),
+(178, '2023-10-19', 9, '{\"2\": {\"lesson\": \"18\", \"cabinet\": \"1\", \"teacher\": \"12\", \"s_group_check_box\": false}, \"1-2\": {\"lesson\": \"1\", \"cabinet\": \"5\", \"teacher\": \"14\", \"s_group_check_box\": true}}');
 
 -- --------------------------------------------------------
 
@@ -152,6 +152,14 @@ CREATE TABLE `статистика` (
   `id_дисциплины` int(11) DEFAULT NULL,
   `часы` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `статистика`
+--
+
+INSERT INTO `статистика` (`id_статистики`, `id_группы`, `id_дисциплины`, `часы`) VALUES
+(9, 9, 6, 60),
+(10, 9, 21, 46);
 
 --
 -- Индексы сохранённых таблиц
@@ -205,13 +213,13 @@ ALTER TABLE `статистика`
 -- AUTO_INCREMENT для таблицы `дисциплины`
 --
 ALTER TABLE `дисциплины`
-  MODIFY `id_дисциплины` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_дисциплины` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `преподаватели`
 --
 ALTER TABLE `преподаватели`
-  MODIFY `id_преподавателя` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_преподавателя` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT для таблицы `аудитории`
@@ -223,13 +231,19 @@ ALTER TABLE `аудитории`
 -- AUTO_INCREMENT для таблицы `группы`
 --
 ALTER TABLE `группы`
-  MODIFY `id_группы` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_группы` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `расписание`
 --
 ALTER TABLE `расписание`
-  MODIFY `id_расписания` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `id_расписания` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
+
+--
+-- AUTO_INCREMENT для таблицы `статистика`
+--
+ALTER TABLE `статистика`
+  MODIFY `id_статистики` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
