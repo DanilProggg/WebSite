@@ -1,4 +1,4 @@
-<?php
+ <?php
 ob_end_clean();
 header('Content-Type: application/json');
 include_once ("../db.php");
@@ -21,7 +21,7 @@ while ($row = mysqli_fetch_array($result)){
 	//Вычисляем количество пройденых часов
 	$result2 = mysqli_query($db, sprintf("SELECT дисциплины
 				  FROM расписание
-				  WHERE id_группы = '%s'",
+				  WHERE id_группы = '%s' AND дата < CURDATE()",
 	mysqli_real_escape_string($db,$group_id)));
 
 	$temp_past_hours = 0;
