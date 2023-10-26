@@ -29,32 +29,32 @@
 				<div class="timetable-row-unit">суббота</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">1 пара</div>
+				<div class="timetable-row-unit">1 урок</div>
 				<div class="timetable-row-unit">9:00 - 10:30</div>
 				<div class="timetable-row-unit">9:00 - 10:30</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">2 пара</div>
+				<div class="timetable-row-unit">2 урок</div>
 				<div class="timetable-row-unit">10:40 - 12:10</div>
 				<div class="timetable-row-unit">10:40 - 12:10</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">3 пара</div>
+				<div class="timetable-row-unit">3 урок</div>
 				<div class="timetable-row-unit">12:40 - 14:10</div>
 				<div class="timetable-row-unit">12:20 - 13:50</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">4 пара</div>
+				<div class="timetable-row-unit">4 урок</div>
 				<div class="timetable-row-unit">14:30 - 16:00</div>
 				<div class="timetable-row-unit">14:00 - 15:30</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">5 пара</div>
+				<div class="timetable-row-unit">5 урок</div>
 				<div class="timetable-row-unit">16:10 - 17:40</div>
 				<div class="timetable-row-unit">15:40 - 17:10</div>
 			</div>
 			<div class="timetable-row">
-				<div class="timetable-row-unit">6 пара</div>
+				<div class="timetable-row-unit">6 урок</div>
 				<div class="timetable-row-unit">17:50 - 19:20</div>
 				<div class="timetable-row-unit"></div>
 			</div>

@@ -36,7 +36,6 @@ function saveData() {
 
 	let date_validate = false;
 	let lessons_validate = true;
-	let calander_validate = false;
 
 	for (var i = 1; i <= 6; i++) {
 		//Если хотябы 1 элемент не выбран
@@ -69,25 +68,13 @@ function saveData() {
 		}
 		
 	}		  
-	//валидация календаря
-	if(saveData.date === ""){
-		calander_validate = false;
-	} else {
-		let d1 = new Intl.DateTimeFormat('en', {day:'numeric', month:'numeric', year: 'numeric' }).format(new Date());
-		let d2 = new Intl.DateTimeFormat('en', {day:'numeric', month:'numeric', year: 'numeric' }).format(new Date(document.querySelector('#date').value));
-		if(new Date(d1).getTime() > new Date(d2).getTime()){
-			calander_validate = false;
 
-		} else {
-			calander_validate = true;
-		}
-	}
 	//date
 	if($('#group').val() != null){
 		date_validate = true;
 	}
 
-	if(lessons_validate === true && calander_validate === true && date_validate === true) {
+	if(lessons_validate === true && date_validate === true) {
 		console.log(JSON.stringify(saveData));
 		$.ajax({
 			url: 'php_querys/save_query.php',

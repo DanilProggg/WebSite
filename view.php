@@ -36,6 +36,10 @@
 	?>
 </head>
 <body>
+	<div class="logo-title">
+		<img class="logo" src="/img/logo.svg" alt="">
+		<h1>Подготовительное отделение</h1>
+	</div>
 	<main class="main_view">
 		<?php 
 			$group = urldecode($_GET['group']);
