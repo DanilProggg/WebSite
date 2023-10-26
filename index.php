@@ -14,7 +14,13 @@
 	<link rel="icon" href="logo.png">
 </head>
 <body>
-	<h1 class="header_title">Расписание</h1>
+	<header>
+		<div class="logo-title">
+			<img class="logo" src="/img/logo.svg" alt="">
+			<h1>Подготовительное отделение</h1>
+		</div>
+		<h1 class="header_title">Расписание</h1>
+	</header>
 	<main class="main_page">
 		<div class="timetable main_unit">
 			<div class="timetable-row timetable-row-title">
