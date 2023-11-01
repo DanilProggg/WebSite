@@ -37,7 +37,9 @@
 </head>
 <body>
 	<div class="logo-title">
+		<a href="/">
 		<img class="logo" src="/img/logo.svg" alt="">
+		</a>
 		<h1>Подготовительное отделение</h1>
 	</div>
 	<main class="main_view">
