@@ -3,7 +3,7 @@
 		margin: 0 400px;
 	}
 	.main_page{
-		margin: 200px 100px;
+		margin: 80px 100px 0;
 	}
 }
 @media only screen and (max-width: 1440px) {
@@ -11,7 +11,7 @@
 		margin: 0 300px;
 	}
 	.main_page{
-		margin: 200px 50px;
+		margin: 80px 50px 0;
 	}
 
 }
@@ -21,7 +21,7 @@
 		margin: 0 200px;
 	}
 	.main_page{
-		margin: 100px 180px;
+		margin: 50px 180px 0;
 		flex-direction: column;
 	}
 	.group_list{
