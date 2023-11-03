@@ -47,7 +47,7 @@ function statsUpdate(groupId){
 			if(data.length !=null) {
 				for (var i = 0; i < data.length; i++) {
 					let persent = data[i].past_hours / data[i].planed_hours * 100;
-					persent = parseInt(persent);
+					persent = parseFloat(persent).fixed(2)
 					if(data[i].past_hours == 0 || data[i].past_hours == 0){
 						persent = 0;
 					}
