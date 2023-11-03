@@ -48,7 +48,7 @@ function statsUpdate(groupId){
 				for (var i = 0; i < data.length; i++) {
 					let persent = data[i].past_hours / data[i].planed_hours * 100;
 					persent = parseFloat(persent).fixed(2)
-					if(data[i].past_hours == 0 || data[i].past_hours == 0){
+					if(data[i].past_hours == 0 || data[i].past_hours == null){
 						persent = 0;
 					}
 					$('.canvas-stats_group_list').append(`<div class="canvas-stats_group_list-unit" id='${data[i].id_stats}'>
