@@ -3,7 +3,7 @@ import 'jquery.cookie';
 import 'select2';                       // globally assign select2 fn to $ element
 import 'select2/dist/css/select2.css';
 
-import {save,update,select2_main,s_group} from './modules/main.js';
+import {save,update,select2_main,s_group,update_group} from './modules/main.js';
 import {group} from './modules/groups.js';
 import {lesson} from './modules/lessons.js';
 import {teacher} from './modules/teachers.js';
@@ -30,6 +30,7 @@ $(document).ready(function() {
 	lesson();
 	teacher();
 	cabinet();
+
 	
 	
 

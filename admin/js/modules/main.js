@@ -21,8 +21,11 @@ export function update(){
 			// $(".save").toggleClass('.save .save-disabled');
 		}
 		updateData();
+
+	    
 	});
 }
+
 
 
 function saveData() {

@@ -113,9 +113,50 @@
 				
 			</div>
 		</div>
+		<div id="calendar">
+			
+		</div>
 	</main>
 
 
-	<script type="text/javascript" src="js/dist/bundle.js"></script>
+	
+	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script><!--Календарь-->
+	<script>
+	      	document.addEventListener('DOMContentLoaded', function() {
+	        var calendarEl = document.getElementById('calendar');
+	        var calendar = new FullCalendar.Calendar(calendarEl, {
+	          	initialView: 'dayGridMonth',
+	          	locale: 'ru',
+	          	headerToolbar: {
+				  	start: 'title',
+				  	center: '',
+				  	end: 'today prev,next'
+				},
+				eventClick: function(info) {
+				    alert(info.event.title);
+			  	},
+			  	
+	
+				eventSources: [
+
+			    // your event source
+			    {
+			      	url: 'php_querys/get_lessons_json.php?group='+group,
+			      	method: 'GET',
+			      	color: 'yellow',   // a non-ajax option
+			      	textColor: 'black' // a non-ajax option
+			    	}
+
+			    // any other sources...
+
+			  	]
+			  	
+	        });
+	        calendar.render();
+
+	      	});
+
+	    </script>
+	    <script type="text/javascript" src="js/dist/bundle.js"></script>
 </body>
 </html>

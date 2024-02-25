@@ -157,3 +157,26 @@
 	color: white;
 	transition: .1s;
 }
+
+.table{
+	margin-top:20px;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	border-collapse:collapse;
+}
+/*Calander styles*/
+#calendar{
+	margin-top:20px;
+}
+
+.fc-toolbar-title{
+	text-transform: capitalize;
+}
+
+.fc-today-button{
+
+}
+
+.fc-event-title:hover{
+	cursor:pointer;
+}
