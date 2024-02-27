@@ -32,60 +32,78 @@
 		</nav>
 		<div class="canvas">
 			
-		
-			<select id="group"><option value="0" selected disabled>Выберите группу</option>
+			<form method="get">
+			<select name="group" onchange="this.form.submit()" id="group"><option value="0" selected disabled>Выберите группу</option>
 				<?php 
 					$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 						while ($row = mysqli_fetch_array($result)){
-							echo "<option value=".$row["id_группы"] .">".$row["группа"]."</option>";
+
+							echo "<option value=".$row["id_группы"];
+
+							if($_GET['group']==$row["id_группы"]) echo " selected";
+
+							echo ">".$row["группа"]."</option>";
 					}
 				?>
 			</select>
+			</form>
 			<div id="calendar">
 				
 			</div>
 		</div>
 	</main>
-
-
-	
-	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script><!--Календарь-->
-	<script>
-	      	document.addEventListener('DOMContentLoaded', function() {
-	        var calendarEl = document.getElementById('calendar');
-	        var calendar = new FullCalendar.Calendar(calendarEl, {
-	          	initialView: 'dayGridMonth',
-	          	locale: 'ru',
-	          	headerToolbar: {
-				  	start: 'title',
-				  	center: '',
-				  	end: 'today prev,next'
-				},
-				eventClick: function(info) {
-				    alert(info.event.title);
-			  	},
-			  	
-	
-				eventSources: [
-
-			    // your event source
-			    {
-			      	url: 'php_querys/get_lessons_json.php'+group,
-			      	method: 'GET',
-			      	color: 'yellow',   // a non-ajax option
-			      	textColor: 'black' // a non-ajax option
-			    	}
-
-			    // any other sources...
-
-			  	]
-			  	
-	        });
-	        calendar.render();
-
-	      	});
-
-	    </script>
+		<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 	    <script type="text/javascript" src="js/dist/bundle.js"></script>
+		<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+		<script>
+			var queryString = window.location.search;
+			queryString = queryString.replace(/[^0-9]/g, '');
+			console.log(queryString);
+			document.addEventListener('DOMContentLoaded', function() {
+	        	var calendarEl = document.getElementById('calendar');
+	        	var calendar = new FullCalendar.Calendar(calendarEl, {
+	          		initialView: 'dayGridMonth',
+	          		locale: 'ru',
+	          		headerToolbar: {
+				  		start: 'title',
+				  		center: '',
+					  	end: 'today prev,next'
+					},
+
+					dateClick: function(info) {
+						console.log(info);					    				    
+					},
+
+					eventClick: function (info) {
+						alert(info.event.title);
+					},
+
+					eventDidMount(info){
+						$(info.el).attr('title',info.event.title);
+					},
+
+
+			  		dayMaxEvents: true, // for all non-TimeGrid views
+					views: {
+					    timeGrid: {
+					    	dayMaxEvents: 6 // adjust to 6 only for timeGridWeek/timeGridDay
+					    }
+					},
+			  	
+	
+					eventSources: [
+			    		{
+			      			url: '/admin/php_querys/get_lessons_json.php?group='+queryString,
+			      			method: 'GET',
+			      			color: 'yellow',   // a non-ajax option
+			      			textColor: 'black' // a non-ajax option
+			    		}
+			    	]
+			  	
+	        	});
+	        	calendar.render();
+	        	});
+		</script>
+
 </body>
 </html>

@@ -39,7 +39,7 @@
 					</script> 
 				</div>
 				<div class="canvas-up_menu-group">
-					<select id="group"><option value="0" selected disabled>Выберите группу</option>
+					<select id="group" onchange="change_group(this);"><option value="0" selected disabled>Выберите группу</option>
 						<?php 
 							$result = mysqli_query($db, "SELECT * FROM группы ORDER BY группа ASC");
 							while ($row = mysqli_fetch_array($result)){
@@ -119,44 +119,9 @@
 	</main>
 
 
-	
-	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script><!--Календарь-->
-	<script>
-	      	document.addEventListener('DOMContentLoaded', function() {
-	        var calendarEl = document.getElementById('calendar');
-	        var calendar = new FullCalendar.Calendar(calendarEl, {
-	          	initialView: 'dayGridMonth',
-	          	locale: 'ru',
-	          	headerToolbar: {
-				  	start: 'title',
-				  	center: '',
-				  	end: 'today prev,next'
-				},
-				eventClick: function(info) {
-				    alert(info.event.title);
-			  	},
-			  	
-	
-				eventSources: [
 
-			    // your event source
-			    {
-			      	url: 'php_querys/get_lessons_json.php?group='+group,
-			      	method: 'GET',
-			      	color: 'yellow',   // a non-ajax option
-			      	textColor: 'black' // a non-ajax option
-			    	}
+	<script type="text/javascript" src="js/dist/bundle.js"></script>
 
-			    // any other sources...
-
-			  	]
-			  	
-	        });
-	        calendar.render();
-
-	      	});
-
-	    </script>
-	    <script type="text/javascript" src="js/dist/bundle.js"></script>
+	    
 </body>
 </html>
